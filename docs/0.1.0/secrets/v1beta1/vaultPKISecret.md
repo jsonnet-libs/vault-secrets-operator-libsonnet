@@ -1,0 +1,530 @@
+---
+permalink: /0.1.0/secrets/v1beta1/vaultPKISecret/
+---
+
+# secrets.v1beta1.vaultPKISecret
+
+"VaultPKISecret is the Schema for the vaultpkisecrets API"
+
+## Index
+
+* [`fn new(name)`](#fn-new)
+* [`obj metadata`](#obj-metadata)
+  * [`fn withAnnotations(annotations)`](#fn-metadatawithannotations)
+  * [`fn withAnnotationsMixin(annotations)`](#fn-metadatawithannotationsmixin)
+  * [`fn withClusterName(clusterName)`](#fn-metadatawithclustername)
+  * [`fn withCreationTimestamp(creationTimestamp)`](#fn-metadatawithcreationtimestamp)
+  * [`fn withDeletionGracePeriodSeconds(deletionGracePeriodSeconds)`](#fn-metadatawithdeletiongraceperiodseconds)
+  * [`fn withDeletionTimestamp(deletionTimestamp)`](#fn-metadatawithdeletiontimestamp)
+  * [`fn withFinalizers(finalizers)`](#fn-metadatawithfinalizers)
+  * [`fn withFinalizersMixin(finalizers)`](#fn-metadatawithfinalizersmixin)
+  * [`fn withGenerateName(generateName)`](#fn-metadatawithgeneratename)
+  * [`fn withGeneration(generation)`](#fn-metadatawithgeneration)
+  * [`fn withLabels(labels)`](#fn-metadatawithlabels)
+  * [`fn withLabelsMixin(labels)`](#fn-metadatawithlabelsmixin)
+  * [`fn withName(name)`](#fn-metadatawithname)
+  * [`fn withNamespace(namespace)`](#fn-metadatawithnamespace)
+  * [`fn withOwnerReferences(ownerReferences)`](#fn-metadatawithownerreferences)
+  * [`fn withOwnerReferencesMixin(ownerReferences)`](#fn-metadatawithownerreferencesmixin)
+  * [`fn withResourceVersion(resourceVersion)`](#fn-metadatawithresourceversion)
+  * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
+  * [`fn withUid(uid)`](#fn-metadatawithuid)
+* [`obj spec`](#obj-spec)
+  * [`fn withAltNames(altNames)`](#fn-specwithaltnames)
+  * [`fn withAltNamesMixin(altNames)`](#fn-specwithaltnamesmixin)
+  * [`fn withClear(clear)`](#fn-specwithclear)
+  * [`fn withCommonName(commonName)`](#fn-specwithcommonname)
+  * [`fn withExcludeCNFromSans(excludeCNFromSans)`](#fn-specwithexcludecnfromsans)
+  * [`fn withExpiryOffset(expiryOffset)`](#fn-specwithexpiryoffset)
+  * [`fn withFormat(format)`](#fn-specwithformat)
+  * [`fn withIpSans(ipSans)`](#fn-specwithipsans)
+  * [`fn withIpSansMixin(ipSans)`](#fn-specwithipsansmixin)
+  * [`fn withIssuerRef(issuerRef)`](#fn-specwithissuerref)
+  * [`fn withMount(mount)`](#fn-specwithmount)
+  * [`fn withNamespace(namespace)`](#fn-specwithnamespace)
+  * [`fn withNotAfter(notAfter)`](#fn-specwithnotafter)
+  * [`fn withOtherSans(otherSans)`](#fn-specwithothersans)
+  * [`fn withOtherSansMixin(otherSans)`](#fn-specwithothersansmixin)
+  * [`fn withPrivateKeyFormat(privateKeyFormat)`](#fn-specwithprivatekeyformat)
+  * [`fn withRevoke(revoke)`](#fn-specwithrevoke)
+  * [`fn withRole(role)`](#fn-specwithrole)
+  * [`fn withRolloutRestartTargets(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargets)
+  * [`fn withRolloutRestartTargetsMixin(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargetsmixin)
+  * [`fn withTtl(ttl)`](#fn-specwithttl)
+  * [`fn withUriSans(uriSans)`](#fn-specwithurisans)
+  * [`fn withUriSansMixin(uriSans)`](#fn-specwithurisansmixin)
+  * [`fn withVaultAuthRef(vaultAuthRef)`](#fn-specwithvaultauthref)
+  * [`obj spec.destination`](#obj-specdestination)
+    * [`fn withAnnotations(annotations)`](#fn-specdestinationwithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specdestinationwithannotationsmixin)
+    * [`fn withCreate(create)`](#fn-specdestinationwithcreate)
+    * [`fn withLabels(labels)`](#fn-specdestinationwithlabels)
+    * [`fn withLabelsMixin(labels)`](#fn-specdestinationwithlabelsmixin)
+    * [`fn withName(name)`](#fn-specdestinationwithname)
+    * [`fn withType(type)`](#fn-specdestinationwithtype)
+  * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
+    * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
+    * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
+
+## Fields
+
+### fn new
+
+```ts
+new(name)
+```
+
+new returns an instance of VaultPKISecret
+
+## obj metadata
+
+"ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create."
+
+### fn metadata.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
+
+### fn metadata.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations"
+
+**Note:** This function appends passed data to existing values
+
+### fn metadata.withClusterName
+
+```ts
+withClusterName(clusterName)
+```
+
+"The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request."
+
+### fn metadata.withCreationTimestamp
+
+```ts
+withCreationTimestamp(creationTimestamp)
+```
+
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
+
+### fn metadata.withDeletionGracePeriodSeconds
+
+```ts
+withDeletionGracePeriodSeconds(deletionGracePeriodSeconds)
+```
+
+"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only."
+
+### fn metadata.withDeletionTimestamp
+
+```ts
+withDeletionTimestamp(deletionTimestamp)
+```
+
+"Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers."
+
+### fn metadata.withFinalizers
+
+```ts
+withFinalizers(finalizers)
+```
+
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
+
+### fn metadata.withFinalizersMixin
+
+```ts
+withFinalizersMixin(finalizers)
+```
+
+"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list."
+
+**Note:** This function appends passed data to existing values
+
+### fn metadata.withGenerateName
+
+```ts
+withGenerateName(generateName)
+```
+
+"GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.\n\nIf this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).\n\nApplied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency"
+
+### fn metadata.withGeneration
+
+```ts
+withGeneration(generation)
+```
+
+"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only."
+
+### fn metadata.withLabels
+
+```ts
+withLabels(labels)
+```
+
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
+
+### fn metadata.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels"
+
+**Note:** This function appends passed data to existing values
+
+### fn metadata.withName
+
+```ts
+withName(name)
+```
+
+"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names"
+
+### fn metadata.withNamespace
+
+```ts
+withNamespace(namespace)
+```
+
+"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.\n\nMust be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces"
+
+### fn metadata.withOwnerReferences
+
+```ts
+withOwnerReferences(ownerReferences)
+```
+
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
+
+### fn metadata.withOwnerReferencesMixin
+
+```ts
+withOwnerReferencesMixin(ownerReferences)
+```
+
+"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller."
+
+**Note:** This function appends passed data to existing values
+
+### fn metadata.withResourceVersion
+
+```ts
+withResourceVersion(resourceVersion)
+```
+
+"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.\n\nPopulated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency"
+
+### fn metadata.withSelfLink
+
+```ts
+withSelfLink(selfLink)
+```
+
+"SelfLink is a URL representing this object. Populated by the system. Read-only.\n\nDEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release."
+
+### fn metadata.withUid
+
+```ts
+withUid(uid)
+```
+
+"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.\n\nPopulated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids"
+
+## obj spec
+
+"VaultPKISecretSpec defines the desired state of VaultPKISecret"
+
+### fn spec.withAltNames
+
+```ts
+withAltNames(altNames)
+```
+
+"AltNames to include in the request May contain both DNS names and email addresses."
+
+### fn spec.withAltNamesMixin
+
+```ts
+withAltNamesMixin(altNames)
+```
+
+"AltNames to include in the request May contain both DNS names and email addresses."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withClear
+
+```ts
+withClear(clear)
+```
+
+"Clear the Kubernetes secret when the resource is deleted."
+
+### fn spec.withCommonName
+
+```ts
+withCommonName(commonName)
+```
+
+"CommonName to include in the request."
+
+### fn spec.withExcludeCNFromSans
+
+```ts
+withExcludeCNFromSans(excludeCNFromSans)
+```
+
+"ExcludeCNFromSans from DNS or Email Subject Alternate Names. Default: false"
+
+### fn spec.withExpiryOffset
+
+```ts
+withExpiryOffset(expiryOffset)
+```
+
+"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc. Set to empty string \"\" to prevent certificate rotation."
+
+### fn spec.withFormat
+
+```ts
+withFormat(format)
+```
+
+"Format for the certificate. Choices: \"pem\", \"der\", \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Default: pem"
+
+### fn spec.withIpSans
+
+```ts
+withIpSans(ipSans)
+```
+
+"IPSans to include in the request."
+
+### fn spec.withIpSansMixin
+
+```ts
+withIpSansMixin(ipSans)
+```
+
+"IPSans to include in the request."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withIssuerRef
+
+```ts
+withIssuerRef(issuerRef)
+```
+
+"IssuerRef reference to an existing PKI issuer, either by Vault-generated identifier, the literal string default to refer to the currently configured default issuer, or the name assigned to an issuer. This parameter is part of the request URL."
+
+### fn spec.withMount
+
+```ts
+withMount(mount)
+```
+
+"Mount for the secret in Vault"
+
+### fn spec.withNamespace
+
+```ts
+withNamespace(namespace)
+```
+
+"Namespace to get the secret from in Vault"
+
+### fn spec.withNotAfter
+
+```ts
+withNotAfter(notAfter)
+```
+
+"NotAfter field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+
+### fn spec.withOtherSans
+
+```ts
+withOtherSans(otherSans)
+```
+
+"Requested other SANs, in an array with the format oid;type:value for each entry."
+
+### fn spec.withOtherSansMixin
+
+```ts
+withOtherSansMixin(otherSans)
+```
+
+"Requested other SANs, in an array with the format oid;type:value for each entry."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withPrivateKeyFormat
+
+```ts
+withPrivateKeyFormat(privateKeyFormat)
+```
+
+"PrivateKeyFormat, generally the default will be controlled by the Format parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Default: der"
+
+### fn spec.withRevoke
+
+```ts
+withRevoke(revoke)
+```
+
+"Revoke the certificate when the resource is deleted."
+
+### fn spec.withRole
+
+```ts
+withRole(role)
+```
+
+"Role in Vault to use when issuing TLS certificates."
+
+### fn spec.withRolloutRestartTargets
+
+```ts
+withRolloutRestartTargets(rolloutRestartTargets)
+```
+
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
+
+### fn spec.withRolloutRestartTargetsMixin
+
+```ts
+withRolloutRestartTargetsMixin(rolloutRestartTargets)
+```
+
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withTtl
+
+```ts
+withTtl(ttl)
+```
+
+"TTL for the certificate; sets the expiration date. If not specified the Vault role's default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount's max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. Should be in duration notation e.g. 120s, 2h, etc."
+
+### fn spec.withUriSans
+
+```ts
+withUriSans(uriSans)
+```
+
+"The requested URI SANs."
+
+### fn spec.withUriSansMixin
+
+```ts
+withUriSansMixin(uriSans)
+```
+
+"The requested URI SANs."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withVaultAuthRef
+
+```ts
+withVaultAuthRef(vaultAuthRef)
+```
+
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace, eg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will default to the `default` VaultAuth, configured in its own Kubernetes namespace."
+
+## obj spec.destination
+
+"Destination provides configuration necessary for syncing the Vault secret to Kubernetes. If the type is set to \"kubernetes.io/tls\", \"tls.key\" will be set to the \"private_key\" response from Vault, and \"tls.crt\" will be set to \"certificate\" + \"ca_chain\" from the Vault response (\"issuing_ca\" is used when \"ca_chain\" is empty). The \"remove_roots_from_chain=true\" option is used with Vault to exclude the root CA from the Vault response."
+
+### fn spec.destination.withAnnotations
+
+```ts
+withAnnotations(annotations)
+```
+
+"Annotations to apply to the Secret. Requires Create to be set to true."
+
+### fn spec.destination.withAnnotationsMixin
+
+```ts
+withAnnotationsMixin(annotations)
+```
+
+"Annotations to apply to the Secret. Requires Create to be set to true."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.withCreate
+
+```ts
+withCreate(create)
+```
+
+"Create the destination Secret. If the Secret already exists this should be set to false."
+
+### fn spec.destination.withLabels
+
+```ts
+withLabels(labels)
+```
+
+"Labels to apply to the Secret. Requires Create to be set to true."
+
+### fn spec.destination.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels to apply to the Secret. Requires Create to be set to true."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.withName
+
+```ts
+withName(name)
+```
+
+"Name of the Secret"
+
+### fn spec.destination.withType
+
+```ts
+withType(type)
+```
+
+"Type of Kubernetes Secret. Requires Create to be set to true. Defaults to Opaque."
+
+## obj spec.rolloutRestartTargets
+
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
+
+### fn spec.rolloutRestartTargets.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.rolloutRestartTargets.withName
+
+```ts
+withName(name)
+```
+

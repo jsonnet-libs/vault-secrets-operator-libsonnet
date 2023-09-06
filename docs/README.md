@@ -2,4 +2,5 @@
 
 This library is generated with [`k8s`](https://github.com/jsonnet-libs/k8s).
 
-[Docs](https://jsonnet-libs.github.io/vault-secrets-operator-libsonnet)
+- [0.1.0](0.1.0/README.md)
+- [0.2.0](0.2.0/README.md)
