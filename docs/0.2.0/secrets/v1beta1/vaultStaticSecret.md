@@ -268,7 +268,7 @@ withPath(path)
 withRefreshAfter(refreshAfter)
 ```
 
-"RefreshAfter a period of time, in duration notation"
+"RefreshAfter a period of time, in duration notation e.g. 30s, 1m, 24h"
 
 ### fn spec.withRolloutRestartTargets
 

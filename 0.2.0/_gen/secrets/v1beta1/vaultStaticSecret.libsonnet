@@ -81,7 +81,7 @@
     withNamespace(namespace): { spec+: { namespace: namespace } },
     '#withPath':: d.fn(help='"Path of the secret in Vault, corresponds to the `path` parameter for, kv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret kv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"', args=[d.arg(name='path', type=d.T.string)]),
     withPath(path): { spec+: { path: path } },
-    '#withRefreshAfter':: d.fn(help='"RefreshAfter a period of time, in duration notation"', args=[d.arg(name='refreshAfter', type=d.T.string)]),
+    '#withRefreshAfter':: d.fn(help='"RefreshAfter a period of time, in duration notation e.g. 30s, 1m, 24h"', args=[d.arg(name='refreshAfter', type=d.T.string)]),
     withRefreshAfter(refreshAfter): { spec+: { refreshAfter: refreshAfter } },
     '#withRolloutRestartTargets':: d.fn(help='"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \\"rollout-restart\\" for each target whenever the Vault secret changes between reconciliation events. All configured targets wil be ignored if HMACSecretData is set to false. See RolloutRestartTarget for more details."', args=[d.arg(name='rolloutRestartTargets', type=d.T.array)]),
     withRolloutRestartTargets(rolloutRestartTargets): { spec+: { rolloutRestartTargets: if std.isArray(v=rolloutRestartTargets) then rolloutRestartTargets else [rolloutRestartTargets] } },
