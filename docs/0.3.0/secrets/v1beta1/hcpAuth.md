@@ -1,10 +1,10 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultAuth/
+permalink: /0.3.0/secrets/v1beta1/hcpAuth/
 ---
 
-# secrets.v1beta1.vaultAuth
+# secrets.v1beta1.hcpAuth
 
-"VaultAuth is the Schema for the vaultauths API"
+"HCPAuth is the Schema for the hcpauths API"
 
 ## Index
 
@@ -32,48 +32,11 @@ permalink: /0.2.0/secrets/v1beta1/vaultAuth/
 * [`obj spec`](#obj-spec)
   * [`fn withAllowedNamespaces(allowedNamespaces)`](#fn-specwithallowednamespaces)
   * [`fn withAllowedNamespacesMixin(allowedNamespaces)`](#fn-specwithallowednamespacesmixin)
-  * [`fn withHeaders(headers)`](#fn-specwithheaders)
-  * [`fn withHeadersMixin(headers)`](#fn-specwithheadersmixin)
   * [`fn withMethod(method)`](#fn-specwithmethod)
-  * [`fn withMount(mount)`](#fn-specwithmount)
-  * [`fn withNamespace(namespace)`](#fn-specwithnamespace)
-  * [`fn withParams(params)`](#fn-specwithparams)
-  * [`fn withParamsMixin(params)`](#fn-specwithparamsmixin)
-  * [`fn withVaultConnectionRef(vaultConnectionRef)`](#fn-specwithvaultconnectionref)
-  * [`obj spec.appRole`](#obj-specapprole)
-    * [`fn withRoleId(roleId)`](#fn-specapprolewithroleid)
-    * [`fn withSecretRef(secretRef)`](#fn-specapprolewithsecretref)
-  * [`obj spec.aws`](#obj-specaws)
-    * [`fn withHeaderValue(headerValue)`](#fn-specawswithheadervalue)
-    * [`fn withIamEndpoint(iamEndpoint)`](#fn-specawswithiamendpoint)
-    * [`fn withIrsaServiceAccount(irsaServiceAccount)`](#fn-specawswithirsaserviceaccount)
-    * [`fn withRegion(region)`](#fn-specawswithregion)
-    * [`fn withRole(role)`](#fn-specawswithrole)
-    * [`fn withSecretRef(secretRef)`](#fn-specawswithsecretref)
-    * [`fn withSessionName(sessionName)`](#fn-specawswithsessionname)
-    * [`fn withStsEndpoint(stsEndpoint)`](#fn-specawswithstsendpoint)
-  * [`obj spec.gcp`](#obj-specgcp)
-    * [`fn withClusterName(clusterName)`](#fn-specgcpwithclustername)
-    * [`fn withProjectID(projectID)`](#fn-specgcpwithprojectid)
-    * [`fn withRegion(region)`](#fn-specgcpwithregion)
-    * [`fn withRole(role)`](#fn-specgcpwithrole)
-    * [`fn withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)`](#fn-specgcpwithworkloadidentityserviceaccount)
-  * [`obj spec.jwt`](#obj-specjwt)
-    * [`fn withAudiences(audiences)`](#fn-specjwtwithaudiences)
-    * [`fn withAudiencesMixin(audiences)`](#fn-specjwtwithaudiencesmixin)
-    * [`fn withRole(role)`](#fn-specjwtwithrole)
-    * [`fn withSecretRef(secretRef)`](#fn-specjwtwithsecretref)
-    * [`fn withServiceAccount(serviceAccount)`](#fn-specjwtwithserviceaccount)
-    * [`fn withTokenExpirationSeconds(tokenExpirationSeconds)`](#fn-specjwtwithtokenexpirationseconds)
-  * [`obj spec.kubernetes`](#obj-speckubernetes)
-    * [`fn withAudiences(audiences)`](#fn-speckuberneteswithaudiences)
-    * [`fn withAudiencesMixin(audiences)`](#fn-speckuberneteswithaudiencesmixin)
-    * [`fn withRole(role)`](#fn-speckuberneteswithrole)
-    * [`fn withServiceAccount(serviceAccount)`](#fn-speckuberneteswithserviceaccount)
-    * [`fn withTokenExpirationSeconds(tokenExpirationSeconds)`](#fn-speckuberneteswithtokenexpirationseconds)
-  * [`obj spec.storageEncryption`](#obj-specstorageencryption)
-    * [`fn withKeyName(keyName)`](#fn-specstorageencryptionwithkeyname)
-    * [`fn withMount(mount)`](#fn-specstorageencryptionwithmount)
+  * [`fn withOrganizationID(organizationID)`](#fn-specwithorganizationid)
+  * [`fn withProjectID(projectID)`](#fn-specwithprojectid)
+  * [`obj spec.servicePrincipal`](#obj-specserviceprincipal)
+    * [`fn withSecretRef(secretRef)`](#fn-specserviceprincipalwithsecretref)
 
 ## Fields
 
@@ -83,7 +46,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultAuth/
 new(name)
 ```
 
-new returns an instance of VaultAuth
+new returns an instance of HCPAuth
 
 ## obj metadata
 
@@ -251,7 +214,7 @@ withUid(uid)
 
 ## obj spec
 
-"VaultAuthSpec defines the desired state of VaultAuth"
+"HCPAuthSpec defines the desired state of HCPAuth"
 
 ### fn spec.withAllowedNamespaces
 
@@ -259,7 +222,7 @@ withUid(uid)
 withAllowedNamespaces(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which HCPAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this is the default behavior."
 
 ### fn spec.withAllowedNamespacesMixin
 
@@ -267,25 +230,7 @@ withAllowedNamespaces(allowedNamespaces)
 withAllowedNamespacesMixin(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.withHeaders
-
-```ts
-withHeaders(headers)
-```
-
-"Headers to be included in all Vault requests."
-
-### fn spec.withHeadersMixin
-
-```ts
-withHeadersMixin(headers)
-```
-
-"Headers to be included in all Vault requests."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which HCPAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this is the default behavior."
 
 **Note:** This function appends passed data to existing values
 
@@ -297,296 +242,30 @@ withMethod(method)
 
 "Method to use when authenticating to Vault."
 
-### fn spec.withMount
+### fn spec.withOrganizationID
 
 ```ts
-withMount(mount)
+withOrganizationID(organizationID)
 ```
 
-"Mount to use when authenticating to auth method."
+"OrganizationID of the HCP organization."
 
-### fn spec.withNamespace
-
-```ts
-withNamespace(namespace)
-```
-
-"Namespace to auth to in Vault"
-
-### fn spec.withParams
-
-```ts
-withParams(params)
-```
-
-"Params to use when authenticating to Vault"
-
-### fn spec.withParamsMixin
-
-```ts
-withParamsMixin(params)
-```
-
-"Params to use when authenticating to Vault"
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.withVaultConnectionRef
-
-```ts
-withVaultConnectionRef(vaultConnectionRef)
-```
-
-"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace, eg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the Operator will default to\t`default` VaultConnection, configured in its own Kubernetes namespace."
-
-## obj spec.appRole
-
-"AppRole specific auth configuration, requires that the Method be set to `appRole`."
-
-### fn spec.appRole.withRoleId
-
-```ts
-withRoleId(roleId)
-```
-
-"RoleID of the AppRole Role to use for authenticating to Vault."
-
-### fn spec.appRole.withSecretRef
-
-```ts
-withSecretRef(secretRef)
-```
-
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the AppRole Role's SecretID. The secret must have a key named `id` which holds the AppRole Role's secretID."
-
-## obj spec.aws
-
-"AWS specific auth configuration, requires that Method be set to `aws`."
-
-### fn spec.aws.withHeaderValue
-
-```ts
-withHeaderValue(headerValue)
-```
-
-"The Vault header value to include in the STS signing request"
-
-### fn spec.aws.withIamEndpoint
-
-```ts
-withIamEndpoint(iamEndpoint)
-```
-
-"The IAM endpoint to use; if not set will use the default"
-
-### fn spec.aws.withIrsaServiceAccount
-
-```ts
-withIrsaServiceAccount(irsaServiceAccount)
-```
-
-"IRSAServiceAccount name to use with IAM Roles for Service Accounts (IRSA), and should be annotated with \"eks.amazonaws.com/role-arn\". This ServiceAccount will be checked for other EKS annotations: eks.amazonaws.com/audience and eks.amazonaws.com/token-expiration"
-
-### fn spec.aws.withRegion
-
-```ts
-withRegion(region)
-```
-
-"AWS Region to use for signing the authentication request"
-
-### fn spec.aws.withRole
-
-```ts
-withRole(role)
-```
-
-"Vault role to use for authenticating"
-
-### fn spec.aws.withSecretRef
-
-```ts
-withSecretRef(secretRef)
-```
-
-"SecretRef is the name of a Kubernetes Secret which holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`, `session_token`"
-
-### fn spec.aws.withSessionName
-
-```ts
-withSessionName(sessionName)
-```
-
-"The role session name to use when creating a webidentity provider"
-
-### fn spec.aws.withStsEndpoint
-
-```ts
-withStsEndpoint(stsEndpoint)
-```
-
-"The STS endpoint to use; if not set will use the default"
-
-## obj spec.gcp
-
-"GCP specific auth configuration, requires that Method be set to `gcp`."
-
-### fn spec.gcp.withClusterName
-
-```ts
-withClusterName(clusterName)
-```
-
-"GKE cluster name. Defaults to the cluster-name returned from the operator pod's local metadata server."
-
-### fn spec.gcp.withProjectID
+### fn spec.withProjectID
 
 ```ts
 withProjectID(projectID)
 ```
 
-"GCP project ID. Defaults to the project-id returned from the operator pod's local metadata server."
+"ProjectID of the HCP project."
 
-### fn spec.gcp.withRegion
+## obj spec.servicePrincipal
 
-```ts
-withRegion(region)
-```
+"ServicePrincipal provides the necessary configuration for authenticating to HCP using a service principal. For security reasons, only project-level service principals should ever be used."
 
-"GCP Region of the GKE cluster's identity provider. Defaults to the region returned from the operator pod's local metadata server."
-
-### fn spec.gcp.withRole
-
-```ts
-withRole(role)
-```
-
-"Vault role to use for authenticating"
-
-### fn spec.gcp.withWorkloadIdentityServiceAccount
-
-```ts
-withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)
-```
-
-"WorkloadIdentityServiceAccount is the name of a Kubernetes service account (in the same Kubernetes namespace as the Vault*Secret referencing this resource) which has been configured for workload identity in GKE. Should be annotated with \"iam.gke.io/gcp-service-account\"."
-
-## obj spec.jwt
-
-"JWT specific auth configuration, requires that the Method be set to `jwt`."
-
-### fn spec.jwt.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-### fn spec.jwt.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.jwt.withRole
-
-```ts
-withRole(role)
-```
-
-"Role to use for authenticating to Vault."
-
-### fn spec.jwt.withSecretRef
+### fn spec.servicePrincipal.withSecretRef
 
 ```ts
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the JWT token to authenticate to Vault's JWT authentication backend. The secret must have a key named `jwt` which holds the JWT token."
-
-### fn spec.jwt.withServiceAccount
-
-```ts
-withServiceAccount(serviceAccount)
-```
-
-"ServiceAccount to use when creating a ServiceAccount token to authenticate to Vault's JWT authentication backend."
-
-### fn spec.jwt.withTokenExpirationSeconds
-
-```ts
-withTokenExpirationSeconds(tokenExpirationSeconds)
-```
-
-"TokenExpirationSeconds to set the ServiceAccount token."
-
-## obj spec.kubernetes
-
-"Kubernetes specific auth configuration, requires that the Method be set to `kubernetes`."
-
-### fn spec.kubernetes.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-### fn spec.kubernetes.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-**Note:** This function appends passed data to existing values
-
-### fn spec.kubernetes.withRole
-
-```ts
-withRole(role)
-```
-
-"Role to use for authenticating to Vault."
-
-### fn spec.kubernetes.withServiceAccount
-
-```ts
-withServiceAccount(serviceAccount)
-```
-
-"ServiceAccount to use when authenticating to Vault's kubernetes authentication backend."
-
-### fn spec.kubernetes.withTokenExpirationSeconds
-
-```ts
-withTokenExpirationSeconds(tokenExpirationSeconds)
-```
-
-"TokenExpirationSeconds to set the ServiceAccount token."
-
-## obj spec.storageEncryption
-
-"StorageEncryption provides the necessary configuration to encrypt the client storage cache. This should only be configured when client cache persistence with encryption is enabled. This is done by passing setting the manager's commandline argument --client-cache-persistence-model=direct-encrypted. Typically, there should only ever be one VaultAuth configured with StorageEncryption in the Cluster, and it should have the label: cacheStorageEncryption=true"
-
-### fn spec.storageEncryption.withKeyName
-
-```ts
-withKeyName(keyName)
-```
-
-"KeyName to use for encrypt/decrypt operations via Vault Transit."
-
-### fn spec.storageEncryption.withMount
-
-```ts
-withMount(mount)
-```
-
-"Mount path of the Transit engine in Vault."
+"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI/HCP) namespace which provides the HCP ServicePrincipal clientID, and clientSecret. The secret data must have the following structure { \"clientID\": \"clientID\", \"clientSecret\": \"clientSecret\", }"

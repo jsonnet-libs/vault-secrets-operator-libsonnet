@@ -52,6 +52,12 @@ permalink: /0.1.0/secrets/v1beta1/vaultAuth/
     * [`fn withSecretRef(secretRef)`](#fn-specawswithsecretref)
     * [`fn withSessionName(sessionName)`](#fn-specawswithsessionname)
     * [`fn withStsEndpoint(stsEndpoint)`](#fn-specawswithstsendpoint)
+  * [`obj spec.gcp`](#obj-specgcp)
+    * [`fn withClusterName(clusterName)`](#fn-specgcpwithclustername)
+    * [`fn withProjectID(projectID)`](#fn-specgcpwithprojectid)
+    * [`fn withRegion(region)`](#fn-specgcpwithregion)
+    * [`fn withRole(role)`](#fn-specgcpwithrole)
+    * [`fn withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)`](#fn-specgcpwithworkloadidentityserviceaccount)
   * [`obj spec.jwt`](#obj-specjwt)
     * [`fn withAudiences(audiences)`](#fn-specjwtwithaudiences)
     * [`fn withAudiencesMixin(audiences)`](#fn-specjwtwithaudiencesmixin)
@@ -420,6 +426,50 @@ withStsEndpoint(stsEndpoint)
 ```
 
 "The STS endpoint to use; if not set will use the default"
+
+## obj spec.gcp
+
+"GCP specific auth configuration, requires that Method be set to `gcp`."
+
+### fn spec.gcp.withClusterName
+
+```ts
+withClusterName(clusterName)
+```
+
+"GKE cluster name. Defaults to the cluster-name returned from the operator pod's local metadata server."
+
+### fn spec.gcp.withProjectID
+
+```ts
+withProjectID(projectID)
+```
+
+"GCP project ID. Defaults to the project-id returned from the operator pod's local metadata server."
+
+### fn spec.gcp.withRegion
+
+```ts
+withRegion(region)
+```
+
+"GCP Region of the GKE cluster's identity provider. Defaults to the region returned from the operator pod's local metadata server."
+
+### fn spec.gcp.withRole
+
+```ts
+withRole(role)
+```
+
+"Vault role to use for authenticating"
+
+### fn spec.gcp.withWorkloadIdentityServiceAccount
+
+```ts
+withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)
+```
+
+"WorkloadIdentityServiceAccount is the name of a Kubernetes service account (in the same Kubernetes namespace as the Vault*Secret referencing this resource) which has been configured for workload identity in GKE. Should be annotated with \"iam.gke.io/gcp-service-account\"."
 
 ## obj spec.jwt
 

@@ -1,10 +1,10 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultAuth/
+permalink: /0.3.0/secrets/v1beta1/vaultPKISecret/
 ---
 
-# secrets.v1beta1.vaultAuth
+# secrets.v1beta1.vaultPKISecret
 
-"VaultAuth is the Schema for the vaultauths API"
+"VaultPKISecret is the Schema for the vaultpkisecrets API"
 
 ## Index
 
@@ -30,50 +30,41 @@ permalink: /0.2.0/secrets/v1beta1/vaultAuth/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withAllowedNamespaces(allowedNamespaces)`](#fn-specwithallowednamespaces)
-  * [`fn withAllowedNamespacesMixin(allowedNamespaces)`](#fn-specwithallowednamespacesmixin)
-  * [`fn withHeaders(headers)`](#fn-specwithheaders)
-  * [`fn withHeadersMixin(headers)`](#fn-specwithheadersmixin)
-  * [`fn withMethod(method)`](#fn-specwithmethod)
+  * [`fn withAltNames(altNames)`](#fn-specwithaltnames)
+  * [`fn withAltNamesMixin(altNames)`](#fn-specwithaltnamesmixin)
+  * [`fn withClear(clear)`](#fn-specwithclear)
+  * [`fn withCommonName(commonName)`](#fn-specwithcommonname)
+  * [`fn withExcludeCNFromSans(excludeCNFromSans)`](#fn-specwithexcludecnfromsans)
+  * [`fn withExpiryOffset(expiryOffset)`](#fn-specwithexpiryoffset)
+  * [`fn withFormat(format)`](#fn-specwithformat)
+  * [`fn withIpSans(ipSans)`](#fn-specwithipsans)
+  * [`fn withIpSansMixin(ipSans)`](#fn-specwithipsansmixin)
+  * [`fn withIssuerRef(issuerRef)`](#fn-specwithissuerref)
   * [`fn withMount(mount)`](#fn-specwithmount)
   * [`fn withNamespace(namespace)`](#fn-specwithnamespace)
-  * [`fn withParams(params)`](#fn-specwithparams)
-  * [`fn withParamsMixin(params)`](#fn-specwithparamsmixin)
-  * [`fn withVaultConnectionRef(vaultConnectionRef)`](#fn-specwithvaultconnectionref)
-  * [`obj spec.appRole`](#obj-specapprole)
-    * [`fn withRoleId(roleId)`](#fn-specapprolewithroleid)
-    * [`fn withSecretRef(secretRef)`](#fn-specapprolewithsecretref)
-  * [`obj spec.aws`](#obj-specaws)
-    * [`fn withHeaderValue(headerValue)`](#fn-specawswithheadervalue)
-    * [`fn withIamEndpoint(iamEndpoint)`](#fn-specawswithiamendpoint)
-    * [`fn withIrsaServiceAccount(irsaServiceAccount)`](#fn-specawswithirsaserviceaccount)
-    * [`fn withRegion(region)`](#fn-specawswithregion)
-    * [`fn withRole(role)`](#fn-specawswithrole)
-    * [`fn withSecretRef(secretRef)`](#fn-specawswithsecretref)
-    * [`fn withSessionName(sessionName)`](#fn-specawswithsessionname)
-    * [`fn withStsEndpoint(stsEndpoint)`](#fn-specawswithstsendpoint)
-  * [`obj spec.gcp`](#obj-specgcp)
-    * [`fn withClusterName(clusterName)`](#fn-specgcpwithclustername)
-    * [`fn withProjectID(projectID)`](#fn-specgcpwithprojectid)
-    * [`fn withRegion(region)`](#fn-specgcpwithregion)
-    * [`fn withRole(role)`](#fn-specgcpwithrole)
-    * [`fn withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)`](#fn-specgcpwithworkloadidentityserviceaccount)
-  * [`obj spec.jwt`](#obj-specjwt)
-    * [`fn withAudiences(audiences)`](#fn-specjwtwithaudiences)
-    * [`fn withAudiencesMixin(audiences)`](#fn-specjwtwithaudiencesmixin)
-    * [`fn withRole(role)`](#fn-specjwtwithrole)
-    * [`fn withSecretRef(secretRef)`](#fn-specjwtwithsecretref)
-    * [`fn withServiceAccount(serviceAccount)`](#fn-specjwtwithserviceaccount)
-    * [`fn withTokenExpirationSeconds(tokenExpirationSeconds)`](#fn-specjwtwithtokenexpirationseconds)
-  * [`obj spec.kubernetes`](#obj-speckubernetes)
-    * [`fn withAudiences(audiences)`](#fn-speckuberneteswithaudiences)
-    * [`fn withAudiencesMixin(audiences)`](#fn-speckuberneteswithaudiencesmixin)
-    * [`fn withRole(role)`](#fn-speckuberneteswithrole)
-    * [`fn withServiceAccount(serviceAccount)`](#fn-speckuberneteswithserviceaccount)
-    * [`fn withTokenExpirationSeconds(tokenExpirationSeconds)`](#fn-speckuberneteswithtokenexpirationseconds)
-  * [`obj spec.storageEncryption`](#obj-specstorageencryption)
-    * [`fn withKeyName(keyName)`](#fn-specstorageencryptionwithkeyname)
-    * [`fn withMount(mount)`](#fn-specstorageencryptionwithmount)
+  * [`fn withNotAfter(notAfter)`](#fn-specwithnotafter)
+  * [`fn withOtherSans(otherSans)`](#fn-specwithothersans)
+  * [`fn withOtherSansMixin(otherSans)`](#fn-specwithothersansmixin)
+  * [`fn withPrivateKeyFormat(privateKeyFormat)`](#fn-specwithprivatekeyformat)
+  * [`fn withRevoke(revoke)`](#fn-specwithrevoke)
+  * [`fn withRole(role)`](#fn-specwithrole)
+  * [`fn withRolloutRestartTargets(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargets)
+  * [`fn withRolloutRestartTargetsMixin(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargetsmixin)
+  * [`fn withTtl(ttl)`](#fn-specwithttl)
+  * [`fn withUriSans(uriSans)`](#fn-specwithurisans)
+  * [`fn withUriSansMixin(uriSans)`](#fn-specwithurisansmixin)
+  * [`fn withVaultAuthRef(vaultAuthRef)`](#fn-specwithvaultauthref)
+  * [`obj spec.destination`](#obj-specdestination)
+    * [`fn withAnnotations(annotations)`](#fn-specdestinationwithannotations)
+    * [`fn withAnnotationsMixin(annotations)`](#fn-specdestinationwithannotationsmixin)
+    * [`fn withCreate(create)`](#fn-specdestinationwithcreate)
+    * [`fn withLabels(labels)`](#fn-specdestinationwithlabels)
+    * [`fn withLabelsMixin(labels)`](#fn-specdestinationwithlabelsmixin)
+    * [`fn withName(name)`](#fn-specdestinationwithname)
+    * [`fn withType(type)`](#fn-specdestinationwithtype)
+  * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
+    * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
+    * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
 
 ## Fields
 
@@ -83,7 +74,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultAuth/
 new(name)
 ```
 
-new returns an instance of VaultAuth
+new returns an instance of VaultPKISecret
 
 ## obj metadata
 
@@ -251,51 +242,91 @@ withUid(uid)
 
 ## obj spec
 
-"VaultAuthSpec defines the desired state of VaultAuth"
+"VaultPKISecretSpec defines the desired state of VaultPKISecret"
 
-### fn spec.withAllowedNamespaces
-
-```ts
-withAllowedNamespaces(allowedNamespaces)
-```
-
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
-
-### fn spec.withAllowedNamespacesMixin
+### fn spec.withAltNames
 
 ```ts
-withAllowedNamespacesMixin(allowedNamespaces)
+withAltNames(altNames)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
+"AltNames to include in the request May contain both DNS names and email addresses."
+
+### fn spec.withAltNamesMixin
+
+```ts
+withAltNamesMixin(altNames)
+```
+
+"AltNames to include in the request May contain both DNS names and email addresses."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withHeaders
+### fn spec.withClear
 
 ```ts
-withHeaders(headers)
+withClear(clear)
 ```
 
-"Headers to be included in all Vault requests."
+"Clear the Kubernetes secret when the resource is deleted."
 
-### fn spec.withHeadersMixin
+### fn spec.withCommonName
 
 ```ts
-withHeadersMixin(headers)
+withCommonName(commonName)
 ```
 
-"Headers to be included in all Vault requests."
+"CommonName to include in the request."
+
+### fn spec.withExcludeCNFromSans
+
+```ts
+withExcludeCNFromSans(excludeCNFromSans)
+```
+
+"ExcludeCNFromSans from DNS or Email Subject Alternate Names. Default: false"
+
+### fn spec.withExpiryOffset
+
+```ts
+withExpiryOffset(expiryOffset)
+```
+
+"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc. Set to empty string \"\" to prevent certificate rotation."
+
+### fn spec.withFormat
+
+```ts
+withFormat(format)
+```
+
+"Format for the certificate. Choices: \"pem\", \"der\", \"pem_bundle\". If \"pem_bundle\", any private key and issuing cert will be appended to the certificate pem. If \"der\", the value will be base64 encoded. Default: pem"
+
+### fn spec.withIpSans
+
+```ts
+withIpSans(ipSans)
+```
+
+"IPSans to include in the request."
+
+### fn spec.withIpSansMixin
+
+```ts
+withIpSansMixin(ipSans)
+```
+
+"IPSans to include in the request."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withMethod
+### fn spec.withIssuerRef
 
 ```ts
-withMethod(method)
+withIssuerRef(issuerRef)
 ```
 
-"Method to use when authenticating to Vault."
+"IssuerRef reference to an existing PKI issuer, either by Vault-generated identifier, the literal string default to refer to the currently configured default issuer, or the name assigned to an issuer. This parameter is part of the request URL."
 
 ### fn spec.withMount
 
@@ -303,7 +334,7 @@ withMethod(method)
 withMount(mount)
 ```
 
-"Mount to use when authenticating to auth method."
+"Mount for the secret in Vault"
 
 ### fn spec.withNamespace
 
@@ -311,282 +342,189 @@ withMount(mount)
 withNamespace(namespace)
 ```
 
-"Namespace to auth to in Vault"
+"Namespace to get the secret from in Vault"
 
-### fn spec.withParams
-
-```ts
-withParams(params)
-```
-
-"Params to use when authenticating to Vault"
-
-### fn spec.withParamsMixin
+### fn spec.withNotAfter
 
 ```ts
-withParamsMixin(params)
+withNotAfter(notAfter)
 ```
 
-"Params to use when authenticating to Vault"
+"NotAfter field of the certificate with specified date value. The value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
+
+### fn spec.withOtherSans
+
+```ts
+withOtherSans(otherSans)
+```
+
+"Requested other SANs, in an array with the format oid;type:value for each entry."
+
+### fn spec.withOtherSansMixin
+
+```ts
+withOtherSansMixin(otherSans)
+```
+
+"Requested other SANs, in an array with the format oid;type:value for each entry."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withVaultConnectionRef
+### fn spec.withPrivateKeyFormat
 
 ```ts
-withVaultConnectionRef(vaultConnectionRef)
+withPrivateKeyFormat(privateKeyFormat)
 ```
 
-"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace, eg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the Operator will default to\t`default` VaultConnection, configured in its own Kubernetes namespace."
+"PrivateKeyFormat, generally the default will be controlled by the Format parameter as either base64-encoded DER or PEM-encoded DER. However, this can be set to \"pkcs8\" to have the returned private key contain base64-encoded pkcs8 or PEM-encoded pkcs8 instead. Default: der"
 
-## obj spec.appRole
-
-"AppRole specific auth configuration, requires that the Method be set to `appRole`."
-
-### fn spec.appRole.withRoleId
+### fn spec.withRevoke
 
 ```ts
-withRoleId(roleId)
+withRevoke(revoke)
 ```
 
-"RoleID of the AppRole Role to use for authenticating to Vault."
+"Revoke the certificate when the resource is deleted."
 
-### fn spec.appRole.withSecretRef
-
-```ts
-withSecretRef(secretRef)
-```
-
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the AppRole Role's SecretID. The secret must have a key named `id` which holds the AppRole Role's secretID."
-
-## obj spec.aws
-
-"AWS specific auth configuration, requires that Method be set to `aws`."
-
-### fn spec.aws.withHeaderValue
-
-```ts
-withHeaderValue(headerValue)
-```
-
-"The Vault header value to include in the STS signing request"
-
-### fn spec.aws.withIamEndpoint
-
-```ts
-withIamEndpoint(iamEndpoint)
-```
-
-"The IAM endpoint to use; if not set will use the default"
-
-### fn spec.aws.withIrsaServiceAccount
-
-```ts
-withIrsaServiceAccount(irsaServiceAccount)
-```
-
-"IRSAServiceAccount name to use with IAM Roles for Service Accounts (IRSA), and should be annotated with \"eks.amazonaws.com/role-arn\". This ServiceAccount will be checked for other EKS annotations: eks.amazonaws.com/audience and eks.amazonaws.com/token-expiration"
-
-### fn spec.aws.withRegion
-
-```ts
-withRegion(region)
-```
-
-"AWS Region to use for signing the authentication request"
-
-### fn spec.aws.withRole
+### fn spec.withRole
 
 ```ts
 withRole(role)
 ```
 
-"Vault role to use for authenticating"
+"Role in Vault to use when issuing TLS certificates."
 
-### fn spec.aws.withSecretRef
-
-```ts
-withSecretRef(secretRef)
-```
-
-"SecretRef is the name of a Kubernetes Secret which holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`, `session_token`"
-
-### fn spec.aws.withSessionName
+### fn spec.withRolloutRestartTargets
 
 ```ts
-withSessionName(sessionName)
+withRolloutRestartTargets(rolloutRestartTargets)
 ```
 
-"The role session name to use when creating a webidentity provider"
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
 
-### fn spec.aws.withStsEndpoint
+### fn spec.withRolloutRestartTargetsMixin
 
 ```ts
-withStsEndpoint(stsEndpoint)
+withRolloutRestartTargetsMixin(rolloutRestartTargets)
 ```
 
-"The STS endpoint to use; if not set will use the default"
-
-## obj spec.gcp
-
-"GCP specific auth configuration, requires that Method be set to `gcp`."
-
-### fn spec.gcp.withClusterName
-
-```ts
-withClusterName(clusterName)
-```
-
-"GKE cluster name. Defaults to the cluster-name returned from the operator pod's local metadata server."
-
-### fn spec.gcp.withProjectID
-
-```ts
-withProjectID(projectID)
-```
-
-"GCP project ID. Defaults to the project-id returned from the operator pod's local metadata server."
-
-### fn spec.gcp.withRegion
-
-```ts
-withRegion(region)
-```
-
-"GCP Region of the GKE cluster's identity provider. Defaults to the region returned from the operator pod's local metadata server."
-
-### fn spec.gcp.withRole
-
-```ts
-withRole(role)
-```
-
-"Vault role to use for authenticating"
-
-### fn spec.gcp.withWorkloadIdentityServiceAccount
-
-```ts
-withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)
-```
-
-"WorkloadIdentityServiceAccount is the name of a Kubernetes service account (in the same Kubernetes namespace as the Vault*Secret referencing this resource) which has been configured for workload identity in GKE. Should be annotated with \"iam.gke.io/gcp-service-account\"."
-
-## obj spec.jwt
-
-"JWT specific auth configuration, requires that the Method be set to `jwt`."
-
-### fn spec.jwt.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-### fn spec.jwt.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.jwt.withRole
+### fn spec.withTtl
 
 ```ts
-withRole(role)
+withTtl(ttl)
 ```
 
-"Role to use for authenticating to Vault."
+"TTL for the certificate; sets the expiration date. If not specified the Vault role's default, backend default, or system default TTL is used, in that order. Cannot be larger than the mount's max TTL. Note: this only has an effect when generating a CA cert or signing a CA cert, not when generating a CSR for an intermediate CA. Should be in duration notation e.g. 120s, 2h, etc."
 
-### fn spec.jwt.withSecretRef
+### fn spec.withUriSans
 
 ```ts
-withSecretRef(secretRef)
+withUriSans(uriSans)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the JWT token to authenticate to Vault's JWT authentication backend. The secret must have a key named `jwt` which holds the JWT token."
+"The requested URI SANs."
 
-### fn spec.jwt.withServiceAccount
+### fn spec.withUriSansMixin
 
 ```ts
-withServiceAccount(serviceAccount)
+withUriSansMixin(uriSans)
 ```
 
-"ServiceAccount to use when creating a ServiceAccount token to authenticate to Vault's JWT authentication backend."
-
-### fn spec.jwt.withTokenExpirationSeconds
-
-```ts
-withTokenExpirationSeconds(tokenExpirationSeconds)
-```
-
-"TokenExpirationSeconds to set the ServiceAccount token."
-
-## obj spec.kubernetes
-
-"Kubernetes specific auth configuration, requires that the Method be set to `kubernetes`."
-
-### fn spec.kubernetes.withAudiences
-
-```ts
-withAudiences(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
-
-### fn spec.kubernetes.withAudiencesMixin
-
-```ts
-withAudiencesMixin(audiences)
-```
-
-"TokenAudiences to include in the ServiceAccount token."
+"The requested URI SANs."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.kubernetes.withRole
+### fn spec.withVaultAuthRef
 
 ```ts
-withRole(role)
+withVaultAuthRef(vaultAuthRef)
 ```
 
-"Role to use for authenticating to Vault."
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace, eg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will default to the `default` VaultAuth, configured in its own Kubernetes namespace."
 
-### fn spec.kubernetes.withServiceAccount
+## obj spec.destination
+
+"Destination provides configuration necessary for syncing the Vault secret to Kubernetes. If the type is set to \"kubernetes.io/tls\", \"tls.key\" will be set to the \"private_key\" response from Vault, and \"tls.crt\" will be set to \"certificate\" + \"ca_chain\" from the Vault response (\"issuing_ca\" is used when \"ca_chain\" is empty). The \"remove_roots_from_chain=true\" option is used with Vault to exclude the root CA from the Vault response."
+
+### fn spec.destination.withAnnotations
 
 ```ts
-withServiceAccount(serviceAccount)
+withAnnotations(annotations)
 ```
 
-"ServiceAccount to use when authenticating to Vault's kubernetes authentication backend."
+"Annotations to apply to the Secret. Requires Create to be set to true."
 
-### fn spec.kubernetes.withTokenExpirationSeconds
+### fn spec.destination.withAnnotationsMixin
 
 ```ts
-withTokenExpirationSeconds(tokenExpirationSeconds)
+withAnnotationsMixin(annotations)
 ```
 
-"TokenExpirationSeconds to set the ServiceAccount token."
+"Annotations to apply to the Secret. Requires Create to be set to true."
 
-## obj spec.storageEncryption
+**Note:** This function appends passed data to existing values
 
-"StorageEncryption provides the necessary configuration to encrypt the client storage cache. This should only be configured when client cache persistence with encryption is enabled. This is done by passing setting the manager's commandline argument --client-cache-persistence-model=direct-encrypted. Typically, there should only ever be one VaultAuth configured with StorageEncryption in the Cluster, and it should have the label: cacheStorageEncryption=true"
-
-### fn spec.storageEncryption.withKeyName
+### fn spec.destination.withCreate
 
 ```ts
-withKeyName(keyName)
+withCreate(create)
 ```
 
-"KeyName to use for encrypt/decrypt operations via Vault Transit."
+"Create the destination Secret. If the Secret already exists this should be set to false."
 
-### fn spec.storageEncryption.withMount
+### fn spec.destination.withLabels
 
 ```ts
-withMount(mount)
+withLabels(labels)
 ```
 
-"Mount path of the Transit engine in Vault."
+"Labels to apply to the Secret. Requires Create to be set to true."
+
+### fn spec.destination.withLabelsMixin
+
+```ts
+withLabelsMixin(labels)
+```
+
+"Labels to apply to the Secret. Requires Create to be set to true."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.withName
+
+```ts
+withName(name)
+```
+
+"Name of the Secret"
+
+### fn spec.destination.withType
+
+```ts
+withType(type)
+```
+
+"Type of Kubernetes Secret. Requires Create to be set to true. Defaults to Opaque."
+
+## obj spec.rolloutRestartTargets
+
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. See RolloutRestartTarget for more details."
+
+### fn spec.rolloutRestartTargets.withKind
+
+```ts
+withKind(kind)
+```
+
+
+
+### fn spec.rolloutRestartTargets.withName
+
+```ts
+withName(name)
+```
+

@@ -1,5 +1,5 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultAuth/
+permalink: /0.3.0/secrets/v1beta1/vaultAuth/
 ---
 
 # secrets.v1beta1.vaultAuth

@@ -6,6 +6,8 @@ permalink: /0.1.0/secrets/v1beta1/
 
 
 
+* [hcpAuth](hcpAuth.md)
+* [hcpVaultSecretsApp](hcpVaultSecretsApp.md)
 * [vaultAuth](vaultAuth.md)
 * [vaultConnection](vaultConnection.md)
 * [vaultDynamicSecret](vaultDynamicSecret.md)
