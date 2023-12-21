@@ -292,7 +292,7 @@ withExcludeCNFromSans(excludeCNFromSans)
 withExpiryOffset(expiryOffset)
 ```
 
-"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc. Set to empty string \"\" to prevent certificate rotation."
+"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc."
 
 ### fn spec.withFormat
 

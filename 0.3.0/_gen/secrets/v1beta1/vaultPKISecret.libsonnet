@@ -83,7 +83,7 @@
     withCommonName(commonName): { spec+: { commonName: commonName } },
     '#withExcludeCNFromSans':: d.fn(help='"ExcludeCNFromSans from DNS or Email Subject Alternate Names. Default: false"', args=[d.arg(name='excludeCNFromSans', type=d.T.boolean)]),
     withExcludeCNFromSans(excludeCNFromSans): { spec+: { excludeCNFromSans: excludeCNFromSans } },
-    '#withExpiryOffset':: d.fn(help='"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc. Set to empty string \\"\\" to prevent certificate rotation."', args=[d.arg(name='expiryOffset', type=d.T.string)]),
+    '#withExpiryOffset':: d.fn(help='"ExpiryOffset to use for computing when the certificate should be renewed. The rotation time will be difference between the expiration and the offset. Should be in duration notation e.g. 30s, 120s, etc."', args=[d.arg(name='expiryOffset', type=d.T.string)]),
     withExpiryOffset(expiryOffset): { spec+: { expiryOffset: expiryOffset } },
     '#withFormat':: d.fn(help='"Format for the certificate. Choices: \\"pem\\", \\"der\\", \\"pem_bundle\\". If \\"pem_bundle\\", any private key and issuing cert will be appended to the certificate pem. If \\"der\\", the value will be base64 encoded. Default: pem"', args=[d.arg(name='format', type=d.T.string)]),
     withFormat(format): { spec+: { format: format } },
