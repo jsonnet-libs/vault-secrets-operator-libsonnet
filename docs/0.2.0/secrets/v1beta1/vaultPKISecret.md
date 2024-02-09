@@ -61,7 +61,29 @@ permalink: /0.2.0/secrets/v1beta1/vaultPKISecret/
     * [`fn withLabels(labels)`](#fn-specdestinationwithlabels)
     * [`fn withLabelsMixin(labels)`](#fn-specdestinationwithlabelsmixin)
     * [`fn withName(name)`](#fn-specdestinationwithname)
+    * [`fn withOverwrite(overwrite)`](#fn-specdestinationwithoverwrite)
     * [`fn withType(type)`](#fn-specdestinationwithtype)
+    * [`obj spec.destination.transformation`](#obj-specdestinationtransformation)
+      * [`fn withExcludeRaw(excludeRaw)`](#fn-specdestinationtransformationwithexcluderaw)
+      * [`fn withExcludes(excludes)`](#fn-specdestinationtransformationwithexcludes)
+      * [`fn withExcludesMixin(excludes)`](#fn-specdestinationtransformationwithexcludesmixin)
+      * [`fn withIncludes(includes)`](#fn-specdestinationtransformationwithincludes)
+      * [`fn withIncludesMixin(includes)`](#fn-specdestinationtransformationwithincludesmixin)
+      * [`fn withResync(resync)`](#fn-specdestinationtransformationwithresync)
+      * [`fn withTemplates(templates)`](#fn-specdestinationtransformationwithtemplates)
+      * [`fn withTemplatesMixin(templates)`](#fn-specdestinationtransformationwithtemplatesmixin)
+      * [`fn withTransformationRefs(transformationRefs)`](#fn-specdestinationtransformationwithtransformationrefs)
+      * [`fn withTransformationRefsMixin(transformationRefs)`](#fn-specdestinationtransformationwithtransformationrefsmixin)
+      * [`obj spec.destination.transformation.transformationRefs`](#obj-specdestinationtransformationtransformationrefs)
+        * [`fn withIgnoreExcludes(ignoreExcludes)`](#fn-specdestinationtransformationtransformationrefswithignoreexcludes)
+        * [`fn withIgnoreIncludes(ignoreIncludes)`](#fn-specdestinationtransformationtransformationrefswithignoreincludes)
+        * [`fn withName(name)`](#fn-specdestinationtransformationtransformationrefswithname)
+        * [`fn withNamespace(namespace)`](#fn-specdestinationtransformationtransformationrefswithnamespace)
+        * [`fn withTemplateRefs(templateRefs)`](#fn-specdestinationtransformationtransformationrefswithtemplaterefs)
+        * [`fn withTemplateRefsMixin(templateRefs)`](#fn-specdestinationtransformationtransformationrefswithtemplaterefsmixin)
+        * [`obj spec.destination.transformation.transformationRefs.templateRefs`](#obj-specdestinationtransformationtransformationrefstemplaterefs)
+          * [`fn withKeyOverride(keyOverride)`](#fn-specdestinationtransformationtransformationrefstemplaterefswithkeyoverride)
+          * [`fn withName(name)`](#fn-specdestinationtransformationtransformationrefstemplaterefswithname)
   * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
     * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
     * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
@@ -444,7 +466,7 @@ withUriSansMixin(uriSans)
 withVaultAuthRef(vaultAuthRef)
 ```
 
-"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace, eg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will default to the `default` VaultAuth, configured in its own Kubernetes namespace."
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace, eg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will default to the `default` VaultAuth, configured in the operator's namespace."
 
 ## obj spec.destination
 
@@ -502,6 +524,14 @@ withName(name)
 
 "Name of the Secret"
 
+### fn spec.destination.withOverwrite
+
+```ts
+withOverwrite(overwrite)
+```
+
+"Overwrite the destination Secret if it exists and Create is true. This is useful when migrating to VSO from a previous secret deployment strategy."
+
 ### fn spec.destination.withType
 
 ```ts
@@ -509,6 +539,172 @@ withType(type)
 ```
 
 "Type of Kubernetes Secret. Requires Create to be set to true. Defaults to Opaque."
+
+## obj spec.destination.transformation
+
+"Transformation provides configuration for transforming the secret data before it is stored in the Destination."
+
+### fn spec.destination.transformation.withExcludeRaw
+
+```ts
+withExcludeRaw(excludeRaw)
+```
+
+"ExcludeRaw data from the destination Secret. Exclusion policy can be set globally by including 'exclude-raw` in the '--global-transformation-options' command line flag. If set, the command line flag always takes precedence over this configuration."
+
+### fn spec.destination.transformation.withExcludes
+
+```ts
+withExcludes(excludes)
+```
+
+"Excludes contains regex patterns used to filter top-level source secret data fields for exclusion from the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied before any inclusion patterns. To exclude all source secret data fields, you can configure the single pattern \".*\"."
+
+### fn spec.destination.transformation.withExcludesMixin
+
+```ts
+withExcludesMixin(excludes)
+```
+
+"Excludes contains regex patterns used to filter top-level source secret data fields for exclusion from the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied before any inclusion patterns. To exclude all source secret data fields, you can configure the single pattern \".*\"."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.transformation.withIncludes
+
+```ts
+withIncludes(includes)
+```
+
+"Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
+
+### fn spec.destination.transformation.withIncludesMixin
+
+```ts
+withIncludesMixin(includes)
+```
+
+"Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.transformation.withResync
+
+```ts
+withResync(resync)
+```
+
+"Resync the Secret on updates to any configured TransformationRefs."
+
+### fn spec.destination.transformation.withTemplates
+
+```ts
+withTemplates(templates)
+```
+
+"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."
+
+### fn spec.destination.transformation.withTemplatesMixin
+
+```ts
+withTemplatesMixin(templates)
+```
+
+"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.destination.transformation.withTransformationRefs
+
+```ts
+withTransformationRefs(transformationRefs)
+```
+
+"TransformationRefs contain references to template configuration from SecretTransformation."
+
+### fn spec.destination.transformation.withTransformationRefsMixin
+
+```ts
+withTransformationRefsMixin(transformationRefs)
+```
+
+"TransformationRefs contain references to template configuration from SecretTransformation."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.destination.transformation.transformationRefs
+
+"TransformationRefs contain references to template configuration from SecretTransformation."
+
+### fn spec.destination.transformation.transformationRefs.withIgnoreExcludes
+
+```ts
+withIgnoreExcludes(ignoreExcludes)
+```
+
+"IgnoreExcludes controls whether to use the SecretTransformation's Excludes data key filters."
+
+### fn spec.destination.transformation.transformationRefs.withIgnoreIncludes
+
+```ts
+withIgnoreIncludes(ignoreIncludes)
+```
+
+"IgnoreIncludes controls whether to use the SecretTransformation's Includes data key filters."
+
+### fn spec.destination.transformation.transformationRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the SecretTransformation resource."
+
+### fn spec.destination.transformation.transformationRefs.withNamespace
+
+```ts
+withNamespace(namespace)
+```
+
+"Namespace of the SecretTransformation resource."
+
+### fn spec.destination.transformation.transformationRefs.withTemplateRefs
+
+```ts
+withTemplateRefs(templateRefs)
+```
+
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+
+### fn spec.destination.transformation.transformationRefs.withTemplateRefsMixin
+
+```ts
+withTemplateRefsMixin(templateRefs)
+```
+
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+
+**Note:** This function appends passed data to existing values
+
+## obj spec.destination.transformation.transformationRefs.templateRefs
+
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+
+### fn spec.destination.transformation.transformationRefs.templateRefs.withKeyOverride
+
+```ts
+withKeyOverride(keyOverride)
+```
+
+"KeyOverride to the rendered template in the Destination secret. If Key is empty, then the Key from reference spec will be used. Set this to override the Key set from the reference spec."
+
+### fn spec.destination.transformation.transformationRefs.templateRefs.withName
+
+```ts
+withName(name)
+```
+
+"Name of the Template in SecretTransformationSpec.Templates. the rendered secret data."
 
 ## obj spec.rolloutRestartTargets
 

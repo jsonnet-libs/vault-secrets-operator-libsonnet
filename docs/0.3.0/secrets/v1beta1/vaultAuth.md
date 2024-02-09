@@ -337,7 +337,7 @@ withParamsMixin(params)
 withVaultConnectionRef(vaultConnectionRef)
 ```
 
-"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace, eg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the Operator will default to\t`default` VaultConnection, configured in its own Kubernetes namespace."
+"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace, eg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the Operator will default to the `default` VaultConnection, configured in the operator's namespace."
 
 ## obj spec.appRole
 
@@ -409,7 +409,7 @@ withRole(role)
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes Secret which holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`, `session_token`"
+"SecretRef is the name of a Kubernetes Secret in the consumer's (VDS/VSS/PKI) namespace which holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`, `session_token`"
 
 ### fn spec.aws.withSessionName
 
@@ -561,7 +561,7 @@ withRole(role)
 withServiceAccount(serviceAccount)
 ```
 
-"ServiceAccount to use when authenticating to Vault's kubernetes authentication backend."
+"ServiceAccount to use when authenticating to Vault's authentication backend. This must reside in the consuming secret's (VDS/VSS/PKI) namespace."
 
 ### fn spec.kubernetes.withTokenExpirationSeconds
 
