@@ -53,6 +53,8 @@ permalink: /0.1.0/secrets/v1beta1/vaultPKISecret/
   * [`fn withTtl(ttl)`](#fn-specwithttl)
   * [`fn withUriSans(uriSans)`](#fn-specwithurisans)
   * [`fn withUriSansMixin(uriSans)`](#fn-specwithurisansmixin)
+  * [`fn withUserIDs(userIDs)`](#fn-specwithuserids)
+  * [`fn withUserIDsMixin(userIDs)`](#fn-specwithuseridsmixin)
   * [`fn withVaultAuthRef(vaultAuthRef)`](#fn-specwithvaultauthref)
   * [`obj spec.destination`](#obj-specdestination)
     * [`fn withAnnotations(annotations)`](#fn-specdestinationwithannotations)
@@ -69,7 +71,6 @@ permalink: /0.1.0/secrets/v1beta1/vaultPKISecret/
       * [`fn withExcludesMixin(excludes)`](#fn-specdestinationtransformationwithexcludesmixin)
       * [`fn withIncludes(includes)`](#fn-specdestinationtransformationwithincludes)
       * [`fn withIncludesMixin(includes)`](#fn-specdestinationtransformationwithincludesmixin)
-      * [`fn withResync(resync)`](#fn-specdestinationtransformationwithresync)
       * [`fn withTemplates(templates)`](#fn-specdestinationtransformationwithtemplates)
       * [`fn withTemplatesMixin(templates)`](#fn-specdestinationtransformationwithtemplatesmixin)
       * [`fn withTransformationRefs(transformationRefs)`](#fn-specdestinationtransformationwithtransformationrefs)
@@ -460,6 +461,24 @@ withUriSansMixin(uriSans)
 
 **Note:** This function appends passed data to existing values
 
+### fn spec.withUserIDs
+
+```ts
+withUserIDs(userIDs)
+```
+
+"User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate."
+
+### fn spec.withUserIDsMixin
+
+```ts
+withUserIDsMixin(userIDs)
+```
+
+"User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate."
+
+**Note:** This function appends passed data to existing values
+
 ### fn spec.withVaultAuthRef
 
 ```ts
@@ -587,14 +606,6 @@ withIncludesMixin(includes)
 "Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
 
 **Note:** This function appends passed data to existing values
-
-### fn spec.destination.transformation.withResync
-
-```ts
-withResync(resync)
-```
-
-"Resync the Secret on updates to any configured TransformationRefs."
 
 ### fn spec.destination.transformation.withTemplates
 

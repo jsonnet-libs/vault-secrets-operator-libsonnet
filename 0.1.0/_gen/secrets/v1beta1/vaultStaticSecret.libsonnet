@@ -85,8 +85,6 @@
         withIncludes(includes): { spec+: { destination+: { transformation+: { includes: if std.isArray(v=includes) then includes else [includes] } } } },
         '#withIncludesMixin':: d.fn(help='"Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='includes', type=d.T.array)]),
         withIncludesMixin(includes): { spec+: { destination+: { transformation+: { includes+: if std.isArray(v=includes) then includes else [includes] } } } },
-        '#withResync':: d.fn(help='"Resync the Secret on updates to any configured TransformationRefs."', args=[d.arg(name='resync', type=d.T.boolean)]),
-        withResync(resync): { spec+: { destination+: { transformation+: { resync: resync } } } },
         '#withTemplates':: d.fn(help='"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."', args=[d.arg(name='templates', type=d.T.object)]),
         withTemplates(templates): { spec+: { destination+: { transformation+: { templates: templates } } } },
         '#withTemplatesMixin':: d.fn(help='"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."\n\n**Note:** This function appends passed data to existing values', args=[d.arg(name='templates', type=d.T.object)]),

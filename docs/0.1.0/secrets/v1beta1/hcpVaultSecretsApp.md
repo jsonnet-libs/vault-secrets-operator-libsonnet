@@ -50,7 +50,6 @@ permalink: /0.1.0/secrets/v1beta1/hcpVaultSecretsApp/
       * [`fn withExcludesMixin(excludes)`](#fn-specdestinationtransformationwithexcludesmixin)
       * [`fn withIncludes(includes)`](#fn-specdestinationtransformationwithincludes)
       * [`fn withIncludesMixin(includes)`](#fn-specdestinationtransformationwithincludesmixin)
-      * [`fn withResync(resync)`](#fn-specdestinationtransformationwithresync)
       * [`fn withTemplates(templates)`](#fn-specdestinationtransformationwithtemplates)
       * [`fn withTemplatesMixin(templates)`](#fn-specdestinationtransformationwithtemplatesmixin)
       * [`fn withTransformationRefs(transformationRefs)`](#fn-specdestinationtransformationwithtransformationrefs)
@@ -408,14 +407,6 @@ withIncludesMixin(includes)
 "Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
 
 **Note:** This function appends passed data to existing values
-
-### fn spec.destination.transformation.withResync
-
-```ts
-withResync(resync)
-```
-
-"Resync the Secret on updates to any configured TransformationRefs."
 
 ### fn spec.destination.transformation.withTemplates
 
