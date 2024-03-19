@@ -36,6 +36,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultDynamicSecret/
   * [`fn withParams(params)`](#fn-specwithparams)
   * [`fn withParamsMixin(params)`](#fn-specwithparamsmixin)
   * [`fn withPath(path)`](#fn-specwithpath)
+  * [`fn withRefreshAfter(refreshAfter)`](#fn-specwithrefreshafter)
   * [`fn withRenewalPercent(renewalPercent)`](#fn-specwithrenewalpercent)
   * [`fn withRequestHTTPMethod(requestHTTPMethod)`](#fn-specwithrequesthttpmethod)
   * [`fn withRevoke(revoke)`](#fn-specwithrevoke)
@@ -302,6 +303,14 @@ withPath(path)
 ```
 
 "Path in Vault to get the credentials for, and is relative to Mount. Please consult https://developer.hashicorp.com/vault/docs/secrets if you are uncertain about what 'path' should be set to."
+
+### fn spec.withRefreshAfter
+
+```ts
+withRefreshAfter(refreshAfter)
+```
+
+"RefreshAfter a period of time for VSO to sync the source secret data, in duration notation e.g. 30s, 1m, 24h. This value only needs to be set when syncing from a secret's engine that does not provide a lease TTL in its response. The value should be within the secret engine's configured ttl or max_ttl. The source secret's lease duration takes precedence over this configuration when it is greater than 0."
 
 ### fn spec.withRenewalPercent
 
