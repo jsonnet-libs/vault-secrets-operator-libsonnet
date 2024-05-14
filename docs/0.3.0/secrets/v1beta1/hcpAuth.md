@@ -222,7 +222,7 @@ withUid(uid)
 withAllowedNamespaces(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which HCPAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this is the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which HCPAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this\nis the default behavior."
 
 ### fn spec.withAllowedNamespacesMixin
 
@@ -230,7 +230,7 @@ withAllowedNamespaces(allowedNamespaces)
 withAllowedNamespacesMixin(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which HCPAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this is the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which HCPAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the HCPAuthMethod's namespace, this\nis the default behavior."
 
 **Note:** This function appends passed data to existing values
 
@@ -260,7 +260,7 @@ withProjectID(projectID)
 
 ## obj spec.servicePrincipal
 
-"ServicePrincipal provides the necessary configuration for authenticating to HCP using a service principal. For security reasons, only project-level service principals should ever be used."
+"ServicePrincipal provides the necessary configuration for authenticating to\nHCP using a service principal. For security reasons, only project-level\nservice principals should ever be used."
 
 ### fn spec.servicePrincipal.withSecretRef
 
@@ -268,4 +268,4 @@ withProjectID(projectID)
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI/HCP) namespace which provides the HCP ServicePrincipal clientID, and clientSecret. The secret data must have the following structure { \"clientID\": \"clientID\", \"clientSecret\": \"clientSecret\", }"
+"SecretRef is the name of a Kubernetes secret in the consumer's\n(VDS/VSS/PKI/HCP) namespace which provides the HCP ServicePrincipal clientID,\nand clientSecret.\nThe secret data must have the following structure {\n  \"clientID\": \"clientID\",\n  \"clientSecret\": \"clientSecret\",\n}"

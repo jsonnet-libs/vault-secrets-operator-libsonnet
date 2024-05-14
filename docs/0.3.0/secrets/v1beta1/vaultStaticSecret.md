@@ -257,7 +257,7 @@ withUid(uid)
 withHmacSecretData(hmacSecretData)
 ```
 
-"HMACSecretData determines whether the Operator computes the HMAC of the Secret's data. The MAC value will be stored in the resource's Status.SecretMac field, and will be used for drift detection and during incoming Vault secret comparison. Enabling this feature is recommended to ensure that Secret's data stays consistent with Vault."
+"HMACSecretData determines whether the Operator computes the\nHMAC of the Secret's data. The MAC value will be stored in\nthe resource's Status.SecretMac field, and will be used for drift detection\nand during incoming Vault secret comparison.\nEnabling this feature is recommended to ensure that Secret's data stays consistent with Vault."
 
 ### fn spec.withMount
 
@@ -281,7 +281,7 @@ withNamespace(namespace)
 withPath(path)
 ```
 
-"Path of the secret in Vault, corresponds to the `path` parameter for, kv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret kv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
+"Path of the secret in Vault, corresponds to the `path` parameter for,\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
 
 ### fn spec.withRefreshAfter
 
@@ -297,7 +297,7 @@ withRefreshAfter(refreshAfter)
 withRolloutRestartTargets(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. All configured targets wil be ignored if HMACSecretData is set to false. See RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.withRolloutRestartTargetsMixin
 
@@ -305,7 +305,7 @@ withRolloutRestartTargets(rolloutRestartTargets)
 withRolloutRestartTargetsMixin(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. All configured targets wil be ignored if HMACSecretData is set to false. See RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 **Note:** This function appends passed data to existing values
 
@@ -323,7 +323,7 @@ withType(type)
 withVaultAuthRef(vaultAuthRef)
 ```
 
-"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace, eg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will default to the `default` VaultAuth, configured in the operator's namespace."
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
 
 ### fn spec.withVersion
 
@@ -331,7 +331,7 @@ withVaultAuthRef(vaultAuthRef)
 withVersion(version)
 ```
 
-"Version of the secret to fetch. Only valid for type kv-v2. Corresponds to version query parameter: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#version"
+"Version of the secret to fetch. Only valid for type kv-v2. Corresponds to version query parameter:\nhttps://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#version"
 
 ## obj spec.destination
 
@@ -361,7 +361,7 @@ withAnnotationsMixin(annotations)
 withCreate(create)
 ```
 
-"Create the destination Secret. If the Secret already exists this should be set to false."
+"Create the destination Secret.\nIf the Secret already exists this should be set to false."
 
 ### fn spec.destination.withLabels
 
@@ -395,7 +395,7 @@ withName(name)
 withOverwrite(overwrite)
 ```
 
-"Overwrite the destination Secret if it exists and Create is true. This is useful when migrating to VSO from a previous secret deployment strategy."
+"Overwrite the destination Secret if it exists and Create is true. This is\nuseful when migrating to VSO from a previous secret deployment strategy."
 
 ### fn spec.destination.withType
 
@@ -403,11 +403,11 @@ withOverwrite(overwrite)
 withType(type)
 ```
 
-"Type of Kubernetes Secret. Requires Create to be set to true. Defaults to Opaque."
+"Type of Kubernetes Secret. Requires Create to be set to true.\nDefaults to Opaque."
 
 ## obj spec.destination.transformation
 
-"Transformation provides configuration for transforming the secret data before it is stored in the Destination."
+"Transformation provides configuration for transforming the secret data before\nit is stored in the Destination."
 
 ### fn spec.destination.transformation.withExcludeRaw
 
@@ -415,7 +415,7 @@ withType(type)
 withExcludeRaw(excludeRaw)
 ```
 
-"ExcludeRaw data from the destination Secret. Exclusion policy can be set globally by including 'exclude-raw` in the '--global-transformation-options' command line flag. If set, the command line flag always takes precedence over this configuration."
+"ExcludeRaw data from the destination Secret. Exclusion policy can be set\nglobally by including 'exclude-raw` in the '--global-transformation-options'\ncommand line flag. If set, the command line flag always takes precedence over\nthis configuration."
 
 ### fn spec.destination.transformation.withExcludes
 
@@ -423,7 +423,7 @@ withExcludeRaw(excludeRaw)
 withExcludes(excludes)
 ```
 
-"Excludes contains regex patterns used to filter top-level source secret data fields for exclusion from the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied before any inclusion patterns. To exclude all source secret data fields, you can configure the single pattern \".*\"."
+"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
 
 ### fn spec.destination.transformation.withExcludesMixin
 
@@ -431,7 +431,7 @@ withExcludes(excludes)
 withExcludesMixin(excludes)
 ```
 
-"Excludes contains regex patterns used to filter top-level source secret data fields for exclusion from the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied before any inclusion patterns. To exclude all source secret data fields, you can configure the single pattern \".*\"."
+"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
 
 **Note:** This function appends passed data to existing values
 
@@ -441,7 +441,7 @@ withExcludesMixin(excludes)
 withIncludes(includes)
 ```
 
-"Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
+"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
 
 ### fn spec.destination.transformation.withIncludesMixin
 
@@ -449,7 +449,7 @@ withIncludes(includes)
 withIncludesMixin(includes)
 ```
 
-"Includes contains regex patterns used to filter top-level source secret data fields for inclusion in the final K8s Secret data. These pattern filters are never applied to templated fields as defined in Templates. They are always applied last."
+"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
 
 **Note:** This function appends passed data to existing values
 
@@ -459,7 +459,7 @@ withIncludesMixin(includes)
 withTemplates(templates)
 ```
 
-"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."
+"Templates maps a template name to its Template. Templates are always included\nin the rendered K8s Secret, and take precedence over templates defined in a\nSecretTransformation."
 
 ### fn spec.destination.transformation.withTemplatesMixin
 
@@ -467,7 +467,7 @@ withTemplates(templates)
 withTemplatesMixin(templates)
 ```
 
-"Templates maps a template name to its Template. Templates are always included in the rendered K8s Secret, and take precedence over templates defined in a SecretTransformation."
+"Templates maps a template name to its Template. Templates are always included\nin the rendered K8s Secret, and take precedence over templates defined in a\nSecretTransformation."
 
 **Note:** This function appends passed data to existing values
 
@@ -477,7 +477,7 @@ withTemplatesMixin(templates)
 withTransformationRefs(transformationRefs)
 ```
 
-"TransformationRefs contain references to template configuration from SecretTransformation."
+"TransformationRefs contain references to template configuration from\nSecretTransformation."
 
 ### fn spec.destination.transformation.withTransformationRefsMixin
 
@@ -485,13 +485,13 @@ withTransformationRefs(transformationRefs)
 withTransformationRefsMixin(transformationRefs)
 ```
 
-"TransformationRefs contain references to template configuration from SecretTransformation."
+"TransformationRefs contain references to template configuration from\nSecretTransformation."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.destination.transformation.transformationRefs
 
-"TransformationRefs contain references to template configuration from SecretTransformation."
+"TransformationRefs contain references to template configuration from\nSecretTransformation."
 
 ### fn spec.destination.transformation.transformationRefs.withIgnoreExcludes
 
@@ -499,7 +499,7 @@ withTransformationRefsMixin(transformationRefs)
 withIgnoreExcludes(ignoreExcludes)
 ```
 
-"IgnoreExcludes controls whether to use the SecretTransformation's Excludes data key filters."
+"IgnoreExcludes controls whether to use the SecretTransformation's Excludes\ndata key filters."
 
 ### fn spec.destination.transformation.transformationRefs.withIgnoreIncludes
 
@@ -507,7 +507,7 @@ withIgnoreExcludes(ignoreExcludes)
 withIgnoreIncludes(ignoreIncludes)
 ```
 
-"IgnoreIncludes controls whether to use the SecretTransformation's Includes data key filters."
+"IgnoreIncludes controls whether to use the SecretTransformation's Includes\ndata key filters."
 
 ### fn spec.destination.transformation.transformationRefs.withName
 
@@ -531,7 +531,7 @@ withNamespace(namespace)
 withTemplateRefs(templateRefs)
 ```
 
-"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then\nall templates from the SecretTransformation will be rendered to the K8s Secret."
 
 ### fn spec.destination.transformation.transformationRefs.withTemplateRefsMixin
 
@@ -539,13 +539,13 @@ withTemplateRefs(templateRefs)
 withTemplateRefsMixin(templateRefs)
 ```
 
-"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then\nall templates from the SecretTransformation will be rendered to the K8s Secret."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.destination.transformation.transformationRefs.templateRefs
 
-"TemplateRefs map to a Template found in this TransformationRef. If empty, then all templates from the SecretTransformation will be rendered to the K8s Secret."
+"TemplateRefs map to a Template found in this TransformationRef. If empty, then\nall templates from the SecretTransformation will be rendered to the K8s Secret."
 
 ### fn spec.destination.transformation.transformationRefs.templateRefs.withKeyOverride
 
@@ -553,7 +553,7 @@ withTemplateRefsMixin(templateRefs)
 withKeyOverride(keyOverride)
 ```
 
-"KeyOverride to the rendered template in the Destination secret. If Key is empty, then the Key from reference spec will be used. Set this to override the Key set from the reference spec."
+"KeyOverride to the rendered template in the Destination secret. If Key is\nempty, then the Key from reference spec will be used. Set this to override the\nKey set from the reference spec."
 
 ### fn spec.destination.transformation.transformationRefs.templateRefs.withName
 
@@ -561,11 +561,11 @@ withKeyOverride(keyOverride)
 withName(name)
 ```
 
-"Name of the Template in SecretTransformationSpec.Templates. the rendered secret data."
+"Name of the Template in SecretTransformationSpec.Templates.\nthe rendered secret data."
 
 ## obj spec.rolloutRestartTargets
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does not support dynamically reloading a rotated secret. In that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will trigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events. All configured targets wil be ignored if HMACSecretData is set to false. See RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.rolloutRestartTargets.withKind
 
@@ -573,7 +573,7 @@ withName(name)
 withKind(kind)
 ```
 
-
+"Kind of the resource"
 
 ### fn spec.rolloutRestartTargets.withName
 
@@ -581,3 +581,4 @@ withKind(kind)
 withName(name)
 ```
 
+"Name of the resource"

@@ -259,7 +259,7 @@ withUid(uid)
 withAllowedNamespaces(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
 
 ### fn spec.withAllowedNamespacesMixin
 
@@ -267,7 +267,7 @@ withAllowedNamespaces(allowedNamespaces)
 withAllowedNamespacesMixin(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod. This field allows administrators to customize which Kubernetes namespaces are authorized to use with this AuthMethod. While Vault will still enforce its own rules, this has the added configurability of restricting which VaultAuthMethods can be used by which namespaces. Accepted values: []{\"*\"} - wildcard, all namespaces. []{\"a\", \"b\"} - list of namespaces. unset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this is the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
 
 **Note:** This function appends passed data to existing values
 
@@ -337,7 +337,7 @@ withParamsMixin(params)
 withVaultConnectionRef(vaultConnectionRef)
 ```
 
-"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace, eg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the Operator will default to the `default` VaultConnection, configured in the operator's namespace."
+"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace,\neg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the\nOperator will default to the `default` VaultConnection, configured in the operator's namespace."
 
 ## obj spec.appRole
 
@@ -357,7 +357,7 @@ withRoleId(roleId)
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the AppRole Role's SecretID. The secret must have a key named `id` which holds the AppRole Role's secretID."
+"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which\nprovides the AppRole Role's SecretID. The secret must have a key named `id` which holds the\nAppRole Role's secretID."
 
 ## obj spec.aws
 
@@ -385,7 +385,7 @@ withIamEndpoint(iamEndpoint)
 withIrsaServiceAccount(irsaServiceAccount)
 ```
 
-"IRSAServiceAccount name to use with IAM Roles for Service Accounts (IRSA), and should be annotated with \"eks.amazonaws.com/role-arn\". This ServiceAccount will be checked for other EKS annotations: eks.amazonaws.com/audience and eks.amazonaws.com/token-expiration"
+"IRSAServiceAccount name to use with IAM Roles for Service Accounts\n(IRSA), and should be annotated with \"eks.amazonaws.com/role-arn\". This\nServiceAccount will be checked for other EKS annotations:\neks.amazonaws.com/audience and eks.amazonaws.com/token-expiration"
 
 ### fn spec.aws.withRegion
 
@@ -409,7 +409,7 @@ withRole(role)
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes Secret in the consumer's (VDS/VSS/PKI) namespace which holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`, `session_token`"
+"SecretRef is the name of a Kubernetes Secret in the consumer's (VDS/VSS/PKI) namespace\nwhich holds credentials for AWS. Expected keys include `access_key_id`, `secret_access_key`,\n`session_token`"
 
 ### fn spec.aws.withSessionName
 
@@ -437,7 +437,7 @@ withStsEndpoint(stsEndpoint)
 withClusterName(clusterName)
 ```
 
-"GKE cluster name. Defaults to the cluster-name returned from the operator pod's local metadata server."
+"GKE cluster name. Defaults to the cluster-name returned from the operator\npod's local metadata server."
 
 ### fn spec.gcp.withProjectID
 
@@ -445,7 +445,7 @@ withClusterName(clusterName)
 withProjectID(projectID)
 ```
 
-"GCP project ID. Defaults to the project-id returned from the operator pod's local metadata server."
+"GCP project ID. Defaults to the project-id returned from the operator\npod's local metadata server."
 
 ### fn spec.gcp.withRegion
 
@@ -453,7 +453,7 @@ withProjectID(projectID)
 withRegion(region)
 ```
 
-"GCP Region of the GKE cluster's identity provider. Defaults to the region returned from the operator pod's local metadata server."
+"GCP Region of the GKE cluster's identity provider. Defaults to the region\nreturned from the operator pod's local metadata server."
 
 ### fn spec.gcp.withRole
 
@@ -469,7 +469,7 @@ withRole(role)
 withWorkloadIdentityServiceAccount(workloadIdentityServiceAccount)
 ```
 
-"WorkloadIdentityServiceAccount is the name of a Kubernetes service account (in the same Kubernetes namespace as the Vault*Secret referencing this resource) which has been configured for workload identity in GKE. Should be annotated with \"iam.gke.io/gcp-service-account\"."
+"WorkloadIdentityServiceAccount is the name of a Kubernetes service\naccount (in the same Kubernetes namespace as the Vault*Secret referencing\nthis resource) which has been configured for workload identity in GKE.\nShould be annotated with \"iam.gke.io/gcp-service-account\"."
 
 ## obj spec.jwt
 
@@ -507,7 +507,7 @@ withRole(role)
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which provides the JWT token to authenticate to Vault's JWT authentication backend. The secret must have a key named `jwt` which holds the JWT token."
+"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which\nprovides the JWT token to authenticate to Vault's JWT authentication backend. The secret must\nhave a key named `jwt` which holds the JWT token."
 
 ### fn spec.jwt.withServiceAccount
 
@@ -515,7 +515,7 @@ withSecretRef(secretRef)
 withServiceAccount(serviceAccount)
 ```
 
-"ServiceAccount to use when creating a ServiceAccount token to authenticate to Vault's JWT authentication backend."
+"ServiceAccount to use when creating a ServiceAccount token to authenticate to Vault's\nJWT authentication backend."
 
 ### fn spec.jwt.withTokenExpirationSeconds
 
@@ -561,7 +561,7 @@ withRole(role)
 withServiceAccount(serviceAccount)
 ```
 
-"ServiceAccount to use when authenticating to Vault's authentication backend. This must reside in the consuming secret's (VDS/VSS/PKI) namespace."
+"ServiceAccount to use when authenticating to Vault's\nauthentication backend. This must reside in the consuming secret's (VDS/VSS/PKI) namespace."
 
 ### fn spec.kubernetes.withTokenExpirationSeconds
 
@@ -573,7 +573,7 @@ withTokenExpirationSeconds(tokenExpirationSeconds)
 
 ## obj spec.storageEncryption
 
-"StorageEncryption provides the necessary configuration to encrypt the client storage cache. This should only be configured when client cache persistence with encryption is enabled. This is done by passing setting the manager's commandline argument --client-cache-persistence-model=direct-encrypted. Typically, there should only ever be one VaultAuth configured with StorageEncryption in the Cluster, and it should have the label: cacheStorageEncryption=true"
+"StorageEncryption provides the necessary configuration to encrypt the client storage cache.\nThis should only be configured when client cache persistence with encryption is enabled.\nThis is done by passing setting the manager's commandline argument\n--client-cache-persistence-model=direct-encrypted. Typically, there should only ever\nbe one VaultAuth configured with StorageEncryption in the Cluster, and it should have\nthe label: cacheStorageEncryption=true"
 
 ### fn spec.storageEncryption.withKeyName
 
