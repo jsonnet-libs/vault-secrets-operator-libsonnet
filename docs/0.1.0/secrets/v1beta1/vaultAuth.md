@@ -74,6 +74,12 @@ permalink: /0.1.0/secrets/v1beta1/vaultAuth/
   * [`obj spec.storageEncryption`](#obj-specstorageencryption)
     * [`fn withKeyName(keyName)`](#fn-specstorageencryptionwithkeyname)
     * [`fn withMount(mount)`](#fn-specstorageencryptionwithmount)
+  * [`obj spec.vaultAuthGlobalRef`](#obj-specvaultauthglobalref)
+    * [`fn withName(name)`](#fn-specvaultauthglobalrefwithname)
+    * [`fn withNamespace(namespace)`](#fn-specvaultauthglobalrefwithnamespace)
+    * [`obj spec.vaultAuthGlobalRef.mergeStrategy`](#obj-specvaultauthglobalrefmergestrategy)
+      * [`fn withHeaders(headers)`](#fn-specvaultauthglobalrefmergestrategywithheaders)
+      * [`fn withParams(params)`](#fn-specvaultauthglobalrefmergestrategywithparams)
 
 ## Fields
 
@@ -590,3 +596,43 @@ withMount(mount)
 ```
 
 "Mount path of the Transit engine in Vault."
+
+## obj spec.vaultAuthGlobalRef
+
+"VaultAuthGlobalRef."
+
+### fn spec.vaultAuthGlobalRef.withName
+
+```ts
+withName(name)
+```
+
+"Name of the VaultAuthGlobal resource."
+
+### fn spec.vaultAuthGlobalRef.withNamespace
+
+```ts
+withNamespace(namespace)
+```
+
+"Namespace of the VaultAuthGlobal resource. If not provided, the namespace of\nthe referring VaultAuth resource is used."
+
+## obj spec.vaultAuthGlobalRef.mergeStrategy
+
+"MergeStrategy configures the merge strategy for HTTP headers and parameters\nthat are included in all Vault authentication requests."
+
+### fn spec.vaultAuthGlobalRef.mergeStrategy.withHeaders
+
+```ts
+withHeaders(headers)
+```
+
+"Headers configures the merge strategy for HTTP headers that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\n\nIf `union` is set, the headers from the VaultAuthGlobal and VaultAuth\nresources are merged. The headers from the VaultAuth always take precedence.\n\n\nIf `replace` is set, the first set of non-empty headers taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default headers.\n\n\nIf `none` is set, the headers from the\nVaultAuthGlobal resource are ignored and only the headers from the VaultAuth\nresource are used. The default is `none`."
+
+### fn spec.vaultAuthGlobalRef.mergeStrategy.withParams
+
+```ts
+withParams(params)
+```
+
+"Params configures the merge strategy for HTTP parameters that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\n\nIf `union` is set, the parameters from the VaultAuthGlobal and VaultAuth\nresources are merged. The parameters from the VaultAuth always take\nprecedence.\n\n\nIf `replace` is set, the first set of non-empty parameters taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default parameters.\n\n\nIf `none` is set, the parameters from the VaultAuthGlobal resource are ignored\nand only the parameters from the VaultAuth resource are used. The default is\n`none`."
