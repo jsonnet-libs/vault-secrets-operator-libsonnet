@@ -1,10 +1,10 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
+permalink: /0.5.0/secrets/v1beta1/hcpVaultSecretsApp/
 ---
 
-# secrets.v1beta1.vaultStaticSecret
+# secrets.v1beta1.hcpVaultSecretsApp
 
-"VaultStaticSecret is the Schema for the vaultstaticsecrets API"
+"HCPVaultSecretsApp is the Schema for the hcpvaultsecretsapps API"
 
 ## Index
 
@@ -30,16 +30,11 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withHmacSecretData(hmacSecretData)`](#fn-specwithhmacsecretdata)
-  * [`fn withMount(mount)`](#fn-specwithmount)
-  * [`fn withNamespace(namespace)`](#fn-specwithnamespace)
-  * [`fn withPath(path)`](#fn-specwithpath)
+  * [`fn withAppName(appName)`](#fn-specwithappname)
+  * [`fn withHcpAuthRef(hcpAuthRef)`](#fn-specwithhcpauthref)
   * [`fn withRefreshAfter(refreshAfter)`](#fn-specwithrefreshafter)
   * [`fn withRolloutRestartTargets(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargets)
   * [`fn withRolloutRestartTargetsMixin(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargetsmixin)
-  * [`fn withType(type)`](#fn-specwithtype)
-  * [`fn withVaultAuthRef(vaultAuthRef)`](#fn-specwithvaultauthref)
-  * [`fn withVersion(version)`](#fn-specwithversion)
   * [`obj spec.destination`](#obj-specdestination)
     * [`fn withAnnotations(annotations)`](#fn-specdestinationwithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specdestinationwithannotationsmixin)
@@ -72,8 +67,6 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
   * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
     * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
     * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
-  * [`obj spec.syncConfig`](#obj-specsyncconfig)
-    * [`fn withInstantUpdates(instantUpdates)`](#fn-specsyncconfigwithinstantupdates)
 
 ## Fields
 
@@ -83,7 +76,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
 new(name)
 ```
 
-new returns an instance of VaultStaticSecret
+new returns an instance of HCPVaultSecretsApp
 
 ## obj metadata
 
@@ -251,39 +244,23 @@ withUid(uid)
 
 ## obj spec
 
-"VaultStaticSecretSpec defines the desired state of VaultStaticSecret"
+"HCPVaultSecretsAppSpec defines the desired state of HCPVaultSecretsApp"
 
-### fn spec.withHmacSecretData
-
-```ts
-withHmacSecretData(hmacSecretData)
-```
-
-"HMACSecretData determines whether the Operator computes the\nHMAC of the Secret's data. The MAC value will be stored in\nthe resource's Status.SecretMac field, and will be used for drift detection\nand during incoming Vault secret comparison.\nEnabling this feature is recommended to ensure that Secret's data stays consistent with Vault."
-
-### fn spec.withMount
+### fn spec.withAppName
 
 ```ts
-withMount(mount)
+withAppName(appName)
 ```
 
-"Mount for the secret in Vault"
+"AppName of the Vault Secrets Application that is to be synced."
 
-### fn spec.withNamespace
+### fn spec.withHcpAuthRef
 
 ```ts
-withNamespace(namespace)
+withHcpAuthRef(hcpAuthRef)
 ```
 
-"Namespace to get the secret from in Vault"
-
-### fn spec.withPath
-
-```ts
-withPath(path)
-```
-
-"Path of the secret in Vault, corresponds to the `path` parameter for,\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
+"HCPAuthRef to the HCPAuth resource, can be prefixed with a namespace, eg:\n`namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default\nto the namespace of the HCPAuth CR. If no value is specified for HCPAuthRef the\nOperator will default to the `default` HCPAuth, configured in the operator's\nnamespace."
 
 ### fn spec.withRefreshAfter
 
@@ -299,7 +276,7 @@ withRefreshAfter(refreshAfter)
 withRolloutRestartTargets(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s)\nconsuming the HCP Vault Secrets App does not support dynamically reloading a\nrotated secret. In that case one, or more RolloutRestartTarget(s) can be\nconfigured here. The Operator will trigger a \"rollout-restart\" for each target\nwhenever the Vault secret changes between reconciliation events. See\nRolloutRestartTarget for more details."
 
 ### fn spec.withRolloutRestartTargetsMixin
 
@@ -307,37 +284,13 @@ withRolloutRestartTargets(rolloutRestartTargets)
 withRolloutRestartTargetsMixin(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s)\nconsuming the HCP Vault Secrets App does not support dynamically reloading a\nrotated secret. In that case one, or more RolloutRestartTarget(s) can be\nconfigured here. The Operator will trigger a \"rollout-restart\" for each target\nwhenever the Vault secret changes between reconciliation events. See\nRolloutRestartTarget for more details."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withType
-
-```ts
-withType(type)
-```
-
-"Type of the Vault static secret"
-
-### fn spec.withVaultAuthRef
-
-```ts
-withVaultAuthRef(vaultAuthRef)
-```
-
-"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
-
-### fn spec.withVersion
-
-```ts
-withVersion(version)
-```
-
-"Version of the secret to fetch. Only valid for type kv-v2. Corresponds to version query parameter:\nhttps://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#version"
-
 ## obj spec.destination
 
-"Destination provides configuration necessary for syncing the Vault secret to Kubernetes."
+"Destination provides configuration necessary for syncing the HCP Vault\nApplication secrets to Kubernetes."
 
 ### fn spec.destination.withAnnotations
 
@@ -567,7 +520,7 @@ withName(name)
 
 ## obj spec.rolloutRestartTargets
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s)\nconsuming the HCP Vault Secrets App does not support dynamically reloading a\nrotated secret. In that case one, or more RolloutRestartTarget(s) can be\nconfigured here. The Operator will trigger a \"rollout-restart\" for each target\nwhenever the Vault secret changes between reconciliation events. See\nRolloutRestartTarget for more details."
 
 ### fn spec.rolloutRestartTargets.withKind
 
@@ -584,15 +537,3 @@ withName(name)
 ```
 
 "Name of the resource"
-
-## obj spec.syncConfig
-
-"SyncConfig configures sync behavior from Vault to VSO"
-
-### fn spec.syncConfig.withInstantUpdates
-
-```ts
-withInstantUpdates(instantUpdates)
-```
-
-"InstantUpdates is a flag to indicate that event-driven updates are\nenabled for this VaultStaticSecret"

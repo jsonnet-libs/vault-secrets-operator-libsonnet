@@ -118,6 +118,11 @@
       '#withName':: d.fn(help='"Name of the resource"', args=[d.arg(name='name', type=d.T.string)]),
       withName(name): { name: name },
     },
+    '#syncConfig':: d.obj(help='"SyncConfig configures sync behavior from Vault to VSO"'),
+    syncConfig: {
+      '#withInstantUpdates':: d.fn(help='"InstantUpdates is a flag to indicate that event-driven updates are\\nenabled for this VaultStaticSecret"', args=[d.arg(name='instantUpdates', type=d.T.boolean)]),
+      withInstantUpdates(instantUpdates): { spec+: { syncConfig+: { instantUpdates: instantUpdates } } },
+    },
     '#withHmacSecretData':: d.fn(help="\"HMACSecretData determines whether the Operator computes the\\nHMAC of the Secret's data. The MAC value will be stored in\\nthe resource's Status.SecretMac field, and will be used for drift detection\\nand during incoming Vault secret comparison.\\nEnabling this feature is recommended to ensure that Secret's data stays consistent with Vault.\"", args=[d.arg(name='hmacSecretData', type=d.T.boolean)]),
     withHmacSecretData(hmacSecretData): { spec+: { hmacSecretData: hmacSecretData } },
     '#withMount':: d.fn(help='"Mount for the secret in Vault"', args=[d.arg(name='mount', type=d.T.string)]),

@@ -1,10 +1,10 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
+permalink: /0.6.0/secrets/v1beta1/vaultPKISecret/
 ---
 
-# secrets.v1beta1.vaultStaticSecret
+# secrets.v1beta1.vaultPKISecret
 
-"VaultStaticSecret is the Schema for the vaultstaticsecrets API"
+"VaultPKISecret is the Schema for the vaultpkisecrets API"
 
 ## Index
 
@@ -30,16 +30,32 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
   * [`fn withSelfLink(selfLink)`](#fn-metadatawithselflink)
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
-  * [`fn withHmacSecretData(hmacSecretData)`](#fn-specwithhmacsecretdata)
+  * [`fn withAltNames(altNames)`](#fn-specwithaltnames)
+  * [`fn withAltNamesMixin(altNames)`](#fn-specwithaltnamesmixin)
+  * [`fn withClear(clear)`](#fn-specwithclear)
+  * [`fn withCommonName(commonName)`](#fn-specwithcommonname)
+  * [`fn withExcludeCNFromSans(excludeCNFromSans)`](#fn-specwithexcludecnfromsans)
+  * [`fn withExpiryOffset(expiryOffset)`](#fn-specwithexpiryoffset)
+  * [`fn withFormat(format)`](#fn-specwithformat)
+  * [`fn withIpSans(ipSans)`](#fn-specwithipsans)
+  * [`fn withIpSansMixin(ipSans)`](#fn-specwithipsansmixin)
+  * [`fn withIssuerRef(issuerRef)`](#fn-specwithissuerref)
   * [`fn withMount(mount)`](#fn-specwithmount)
   * [`fn withNamespace(namespace)`](#fn-specwithnamespace)
-  * [`fn withPath(path)`](#fn-specwithpath)
-  * [`fn withRefreshAfter(refreshAfter)`](#fn-specwithrefreshafter)
+  * [`fn withNotAfter(notAfter)`](#fn-specwithnotafter)
+  * [`fn withOtherSans(otherSans)`](#fn-specwithothersans)
+  * [`fn withOtherSansMixin(otherSans)`](#fn-specwithothersansmixin)
+  * [`fn withPrivateKeyFormat(privateKeyFormat)`](#fn-specwithprivatekeyformat)
+  * [`fn withRevoke(revoke)`](#fn-specwithrevoke)
+  * [`fn withRole(role)`](#fn-specwithrole)
   * [`fn withRolloutRestartTargets(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargets)
   * [`fn withRolloutRestartTargetsMixin(rolloutRestartTargets)`](#fn-specwithrolloutrestarttargetsmixin)
-  * [`fn withType(type)`](#fn-specwithtype)
+  * [`fn withTtl(ttl)`](#fn-specwithttl)
+  * [`fn withUriSans(uriSans)`](#fn-specwithurisans)
+  * [`fn withUriSansMixin(uriSans)`](#fn-specwithurisansmixin)
+  * [`fn withUserIDs(userIDs)`](#fn-specwithuserids)
+  * [`fn withUserIDsMixin(userIDs)`](#fn-specwithuseridsmixin)
   * [`fn withVaultAuthRef(vaultAuthRef)`](#fn-specwithvaultauthref)
-  * [`fn withVersion(version)`](#fn-specwithversion)
   * [`obj spec.destination`](#obj-specdestination)
     * [`fn withAnnotations(annotations)`](#fn-specdestinationwithannotations)
     * [`fn withAnnotationsMixin(annotations)`](#fn-specdestinationwithannotationsmixin)
@@ -72,8 +88,6 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
   * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
     * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
     * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
-  * [`obj spec.syncConfig`](#obj-specsyncconfig)
-    * [`fn withInstantUpdates(instantUpdates)`](#fn-specsyncconfigwithinstantupdates)
 
 ## Fields
 
@@ -83,7 +97,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
 new(name)
 ```
 
-new returns an instance of VaultStaticSecret
+new returns an instance of VaultPKISecret
 
 ## obj metadata
 
@@ -251,15 +265,91 @@ withUid(uid)
 
 ## obj spec
 
-"VaultStaticSecretSpec defines the desired state of VaultStaticSecret"
+"VaultPKISecretSpec defines the desired state of VaultPKISecret"
 
-### fn spec.withHmacSecretData
+### fn spec.withAltNames
 
 ```ts
-withHmacSecretData(hmacSecretData)
+withAltNames(altNames)
 ```
 
-"HMACSecretData determines whether the Operator computes the\nHMAC of the Secret's data. The MAC value will be stored in\nthe resource's Status.SecretMac field, and will be used for drift detection\nand during incoming Vault secret comparison.\nEnabling this feature is recommended to ensure that Secret's data stays consistent with Vault."
+"AltNames to include in the request\nMay contain both DNS names and email addresses."
+
+### fn spec.withAltNamesMixin
+
+```ts
+withAltNamesMixin(altNames)
+```
+
+"AltNames to include in the request\nMay contain both DNS names and email addresses."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withClear
+
+```ts
+withClear(clear)
+```
+
+"Clear the Kubernetes secret when the resource is deleted."
+
+### fn spec.withCommonName
+
+```ts
+withCommonName(commonName)
+```
+
+"CommonName to include in the request."
+
+### fn spec.withExcludeCNFromSans
+
+```ts
+withExcludeCNFromSans(excludeCNFromSans)
+```
+
+"ExcludeCNFromSans from DNS or Email Subject Alternate Names.\nDefault: false"
+
+### fn spec.withExpiryOffset
+
+```ts
+withExpiryOffset(expiryOffset)
+```
+
+"ExpiryOffset to use for computing when the certificate should be renewed.\nThe rotation time will be difference between the expiration and the offset.\nShould be in duration notation e.g. 30s, 120s, etc."
+
+### fn spec.withFormat
+
+```ts
+withFormat(format)
+```
+
+"Format for the certificate. Choices: \"pem\", \"der\", \"pem_bundle\".\nIf \"pem_bundle\",\nany private key and issuing cert will be appended to the certificate pem.\nIf \"der\", the value will be base64 encoded.\nDefault: pem"
+
+### fn spec.withIpSans
+
+```ts
+withIpSans(ipSans)
+```
+
+"IPSans to include in the request."
+
+### fn spec.withIpSansMixin
+
+```ts
+withIpSansMixin(ipSans)
+```
+
+"IPSans to include in the request."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withIssuerRef
+
+```ts
+withIssuerRef(issuerRef)
+```
+
+"IssuerRef reference to an existing PKI issuer, either by Vault-generated\nidentifier, the literal string default to refer to the currently\nconfigured default issuer, or the name assigned to an issuer.\nThis parameter is part of the request URL."
 
 ### fn spec.withMount
 
@@ -277,21 +367,55 @@ withNamespace(namespace)
 
 "Namespace to get the secret from in Vault"
 
-### fn spec.withPath
+### fn spec.withNotAfter
 
 ```ts
-withPath(path)
+withNotAfter(notAfter)
 ```
 
-"Path of the secret in Vault, corresponds to the `path` parameter for,\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
+"NotAfter field of the certificate with specified date value.\nThe value format should be given in UTC format YYYY-MM-ddTHH:MM:SSZ"
 
-### fn spec.withRefreshAfter
+### fn spec.withOtherSans
 
 ```ts
-withRefreshAfter(refreshAfter)
+withOtherSans(otherSans)
 ```
 
-"RefreshAfter a period of time, in duration notation e.g. 30s, 1m, 24h"
+"Requested other SANs, in an array with the format\noid;type:value for each entry."
+
+### fn spec.withOtherSansMixin
+
+```ts
+withOtherSansMixin(otherSans)
+```
+
+"Requested other SANs, in an array with the format\noid;type:value for each entry."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withPrivateKeyFormat
+
+```ts
+withPrivateKeyFormat(privateKeyFormat)
+```
+
+"PrivateKeyFormat, generally the default will be controlled by the Format\nparameter as either base64-encoded DER or PEM-encoded DER.\nHowever, this can be set to \"pkcs8\" to have the returned\nprivate key contain base64-encoded pkcs8 or PEM-encoded\npkcs8 instead.\nDefault: der"
+
+### fn spec.withRevoke
+
+```ts
+withRevoke(revoke)
+```
+
+"Revoke the certificate when the resource is deleted."
+
+### fn spec.withRole
+
+```ts
+withRole(role)
+```
+
+"Role in Vault to use when issuing TLS certificates."
 
 ### fn spec.withRolloutRestartTargets
 
@@ -299,7 +423,7 @@ withRefreshAfter(refreshAfter)
 withRolloutRestartTargets(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.withRolloutRestartTargetsMixin
 
@@ -307,17 +431,53 @@ withRolloutRestartTargets(rolloutRestartTargets)
 withRolloutRestartTargetsMixin(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nSee RolloutRestartTarget for more details."
 
 **Note:** This function appends passed data to existing values
 
-### fn spec.withType
+### fn spec.withTtl
 
 ```ts
-withType(type)
+withTtl(ttl)
 ```
 
-"Type of the Vault static secret"
+"TTL for the certificate; sets the expiration date.\nIf not specified the Vault role's default,\nbackend default, or system default TTL is used, in that order.\nCannot be larger than the mount's max TTL.\nNote: this only has an effect when generating a CA cert or signing a CA cert,\nnot when generating a CSR for an intermediate CA.\nShould be in duration notation e.g. 120s, 2h, etc."
+
+### fn spec.withUriSans
+
+```ts
+withUriSans(uriSans)
+```
+
+"The requested URI SANs."
+
+### fn spec.withUriSansMixin
+
+```ts
+withUriSansMixin(uriSans)
+```
+
+"The requested URI SANs."
+
+**Note:** This function appends passed data to existing values
+
+### fn spec.withUserIDs
+
+```ts
+withUserIDs(userIDs)
+```
+
+"User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the\nsigned certificate."
+
+### fn spec.withUserIDsMixin
+
+```ts
+withUserIDsMixin(userIDs)
+```
+
+"User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the\nsigned certificate."
+
+**Note:** This function appends passed data to existing values
 
 ### fn spec.withVaultAuthRef
 
@@ -327,17 +487,9 @@ withVaultAuthRef(vaultAuthRef)
 
 "VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
 
-### fn spec.withVersion
-
-```ts
-withVersion(version)
-```
-
-"Version of the secret to fetch. Only valid for type kv-v2. Corresponds to version query parameter:\nhttps://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#version"
-
 ## obj spec.destination
 
-"Destination provides configuration necessary for syncing the Vault secret to Kubernetes."
+"Destination provides configuration necessary for syncing the Vault secret\nto Kubernetes. If the type is set to \"kubernetes.io/tls\", \"tls.key\" will\nbe set to the \"private_key\" response from Vault, and \"tls.crt\" will be\nset to \"certificate\" + \"ca_chain\" from the Vault response (\"issuing_ca\"\nis used when \"ca_chain\" is empty). The \"remove_roots_from_chain=true\"\noption is used with Vault to exclude the root CA from the Vault response."
 
 ### fn spec.destination.withAnnotations
 
@@ -567,7 +719,7 @@ withName(name)
 
 ## obj spec.rolloutRestartTargets
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.rolloutRestartTargets.withKind
 
@@ -584,15 +736,3 @@ withName(name)
 ```
 
 "Name of the resource"
-
-## obj spec.syncConfig
-
-"SyncConfig configures sync behavior from Vault to VSO"
-
-### fn spec.syncConfig.withInstantUpdates
-
-```ts
-withInstantUpdates(instantUpdates)
-```
-
-"InstantUpdates is a flag to indicate that event-driven updates are\nenabled for this VaultStaticSecret"

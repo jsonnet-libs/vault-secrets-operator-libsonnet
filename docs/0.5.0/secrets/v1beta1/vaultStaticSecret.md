@@ -1,5 +1,5 @@
 ---
-permalink: /0.2.0/secrets/v1beta1/vaultStaticSecret/
+permalink: /0.5.0/secrets/v1beta1/vaultStaticSecret/
 ---
 
 # secrets.v1beta1.vaultStaticSecret

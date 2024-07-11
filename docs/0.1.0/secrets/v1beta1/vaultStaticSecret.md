@@ -72,6 +72,8 @@ permalink: /0.1.0/secrets/v1beta1/vaultStaticSecret/
   * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
     * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
     * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
+  * [`obj spec.syncConfig`](#obj-specsyncconfig)
+    * [`fn withInstantUpdates(instantUpdates)`](#fn-specsyncconfigwithinstantupdates)
 
 ## Fields
 
@@ -582,3 +584,15 @@ withName(name)
 ```
 
 "Name of the resource"
+
+## obj spec.syncConfig
+
+"SyncConfig configures sync behavior from Vault to VSO"
+
+### fn spec.syncConfig.withInstantUpdates
+
+```ts
+withInstantUpdates(instantUpdates)
+```
+
+"InstantUpdates is a flag to indicate that event-driven updates are\nenabled for this VaultStaticSecret"
