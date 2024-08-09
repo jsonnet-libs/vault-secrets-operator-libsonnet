@@ -75,6 +75,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultAuth/
     * [`fn withKeyName(keyName)`](#fn-specstorageencryptionwithkeyname)
     * [`fn withMount(mount)`](#fn-specstorageencryptionwithmount)
   * [`obj spec.vaultAuthGlobalRef`](#obj-specvaultauthglobalref)
+    * [`fn withAllowDefault(allowDefault)`](#fn-specvaultauthglobalrefwithallowdefault)
     * [`fn withName(name)`](#fn-specvaultauthglobalrefwithname)
     * [`fn withNamespace(namespace)`](#fn-specvaultauthglobalrefwithnamespace)
     * [`obj spec.vaultAuthGlobalRef.mergeStrategy`](#obj-specvaultauthglobalrefmergestrategy)
@@ -600,6 +601,14 @@ withMount(mount)
 ## obj spec.vaultAuthGlobalRef
 
 "VaultAuthGlobalRef."
+
+### fn spec.vaultAuthGlobalRef.withAllowDefault
+
+```ts
+withAllowDefault(allowDefault)
+```
+
+"AllowDefault when set to true will use the default VaultAuthGlobal resource\nas the default if Name is not set. The 'allow-default-globals' option must be\nset on the operator's '-global-vault-auth-options' flag\n\n\nThe default VaultAuthGlobal search is conditional.\nWhen a ref Namespace is set, the search for the default\nVaultAuthGlobal resource is constrained to that namespace.\nOtherwise, the search order is:\n1. The default VaultAuthGlobal resource in the referring VaultAuth resource's\nnamespace.\n2. The default VaultAuthGlobal resource in the Operator's namespace."
 
 ### fn spec.vaultAuthGlobalRef.withName
 

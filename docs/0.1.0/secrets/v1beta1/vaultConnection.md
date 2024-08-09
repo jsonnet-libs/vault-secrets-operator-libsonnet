@@ -35,6 +35,7 @@ permalink: /0.1.0/secrets/v1beta1/vaultConnection/
   * [`fn withHeaders(headers)`](#fn-specwithheaders)
   * [`fn withHeadersMixin(headers)`](#fn-specwithheadersmixin)
   * [`fn withSkipTLSVerify(skipTLSVerify)`](#fn-specwithskiptlsverify)
+  * [`fn withTimeout(timeout)`](#fn-specwithtimeout)
   * [`fn withTlsServerName(tlsServerName)`](#fn-specwithtlsservername)
 
 ## Fields
@@ -256,6 +257,14 @@ withSkipTLSVerify(skipTLSVerify)
 ```
 
 "SkipTLSVerify for TLS connections."
+
+### fn spec.withTimeout
+
+```ts
+withTimeout(timeout)
+```
+
+"Timeout applied to all Vault requests for this connection. If not set, the\ndefault timeout from the Vault API client config is used."
 
 ### fn spec.withTlsServerName
 

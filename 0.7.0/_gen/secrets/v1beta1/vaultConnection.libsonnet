@@ -59,6 +59,8 @@
     withHeadersMixin(headers): { spec+: { headers+: headers } },
     '#withSkipTLSVerify':: d.fn(help='"SkipTLSVerify for TLS connections."', args=[d.arg(name='skipTLSVerify', type=d.T.boolean)]),
     withSkipTLSVerify(skipTLSVerify): { spec+: { skipTLSVerify: skipTLSVerify } },
+    '#withTimeout':: d.fn(help='"Timeout applied to all Vault requests for this connection. If not set, the\\ndefault timeout from the Vault API client config is used."', args=[d.arg(name='timeout', type=d.T.string)]),
+    withTimeout(timeout): { spec+: { timeout: timeout } },
     '#withTlsServerName':: d.fn(help='"TLSServerName to use as the SNI host for TLS connections."', args=[d.arg(name='tlsServerName', type=d.T.string)]),
     withTlsServerName(tlsServerName): { spec+: { tlsServerName: tlsServerName } },
   },
