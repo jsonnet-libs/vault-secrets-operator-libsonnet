@@ -275,7 +275,7 @@ withMount(mount)
 withNamespace(namespace)
 ```
 
-"Namespace to get the secret from in Vault"
+"Namespace of the secrets engine mount in Vault. If not set, the namespace that's\npart of VaultAuth resource will be inferred."
 
 ### fn spec.withPath
 
@@ -325,7 +325,7 @@ withType(type)
 withVaultAuthRef(vaultAuthRef)
 ```
 
-"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to the\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
 
 ### fn spec.withVersion
 

@@ -344,7 +344,7 @@ withParamsMixin(params)
 withVaultConnectionRef(vaultConnectionRef)
 ```
 
-"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace,\neg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the\nOperator will default to the `default` VaultConnection, configured in the operator's namespace."
+"VaultConnectionRef to the VaultConnection resource, can be prefixed with a namespace,\neg: `namespaceA/vaultConnectionRefB`. If no namespace prefix is provided it will default to\nthe namespace of the VaultConnection CR. If no value is specified for VaultConnectionRef the\nOperator will default to the `default` VaultConnection, configured in the operator's namespace."
 
 ## obj spec.appRole
 
@@ -608,7 +608,7 @@ withMount(mount)
 withAllowDefault(allowDefault)
 ```
 
-"AllowDefault when set to true will use the default VaultAuthGlobal resource\nas the default if Name is not set. The 'allow-default-globals' option must be\nset on the operator's '-global-vault-auth-options' flag\n\n\nThe default VaultAuthGlobal search is conditional.\nWhen a ref Namespace is set, the search for the default\nVaultAuthGlobal resource is constrained to that namespace.\nOtherwise, the search order is:\n1. The default VaultAuthGlobal resource in the referring VaultAuth resource's\nnamespace.\n2. The default VaultAuthGlobal resource in the Operator's namespace."
+"AllowDefault when set to true will use the default VaultAuthGlobal resource\nas the default if Name is not set. The 'allow-default-globals' option must be\nset on the operator's '-global-vault-auth-options' flag\n\nThe default VaultAuthGlobal search is conditional.\nWhen a ref Namespace is set, the search for the default\nVaultAuthGlobal resource is constrained to that namespace.\nOtherwise, the search order is:\n1. The default VaultAuthGlobal resource in the referring VaultAuth resource's\nnamespace.\n2. The default VaultAuthGlobal resource in the Operator's namespace."
 
 ### fn spec.vaultAuthGlobalRef.withName
 
@@ -636,7 +636,7 @@ withNamespace(namespace)
 withHeaders(headers)
 ```
 
-"Headers configures the merge strategy for HTTP headers that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\n\nIf `union` is set, the headers from the VaultAuthGlobal and VaultAuth\nresources are merged. The headers from the VaultAuth always take precedence.\n\n\nIf `replace` is set, the first set of non-empty headers taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default headers.\n\n\nIf `none` is set, the headers from the\nVaultAuthGlobal resource are ignored and only the headers from the VaultAuth\nresource are used. The default is `none`."
+"Headers configures the merge strategy for HTTP headers that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\nIf `union` is set, the headers from the VaultAuthGlobal and VaultAuth\nresources are merged. The headers from the VaultAuth always take precedence.\n\nIf `replace` is set, the first set of non-empty headers taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default headers.\n\nIf `none` is set, the headers from the\nVaultAuthGlobal resource are ignored and only the headers from the VaultAuth\nresource are used. The default is `none`."
 
 ### fn spec.vaultAuthGlobalRef.mergeStrategy.withParams
 
@@ -644,4 +644,4 @@ withHeaders(headers)
 withParams(params)
 ```
 
-"Params configures the merge strategy for HTTP parameters that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\n\nIf `union` is set, the parameters from the VaultAuthGlobal and VaultAuth\nresources are merged. The parameters from the VaultAuth always take\nprecedence.\n\n\nIf `replace` is set, the first set of non-empty parameters taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default parameters.\n\n\nIf `none` is set, the parameters from the VaultAuthGlobal resource are ignored\nand only the parameters from the VaultAuth resource are used. The default is\n`none`."
+"Params configures the merge strategy for HTTP parameters that are included in\nall Vault requests. Choices are `union`, `replace`, or `none`.\n\nIf `union` is set, the parameters from the VaultAuthGlobal and VaultAuth\nresources are merged. The parameters from the VaultAuth always take\nprecedence.\n\nIf `replace` is set, the first set of non-empty parameters taken in order from:\nVaultAuth, VaultAuthGlobal auth method, VaultGlobal default parameters.\n\nIf `none` is set, the parameters from the VaultAuthGlobal resource are ignored\nand only the parameters from the VaultAuth resource are used. The default is\n`none`."

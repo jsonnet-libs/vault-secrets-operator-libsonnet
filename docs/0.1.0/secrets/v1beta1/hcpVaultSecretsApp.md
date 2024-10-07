@@ -67,6 +67,9 @@ permalink: /0.1.0/secrets/v1beta1/hcpVaultSecretsApp/
   * [`obj spec.rolloutRestartTargets`](#obj-specrolloutrestarttargets)
     * [`fn withKind(kind)`](#fn-specrolloutrestarttargetswithkind)
     * [`fn withName(name)`](#fn-specrolloutrestarttargetswithname)
+  * [`obj spec.syncConfig`](#obj-specsyncconfig)
+    * [`obj spec.syncConfig.dynamic`](#obj-specsyncconfigdynamic)
+      * [`fn withRenewalPercent(renewalPercent)`](#fn-specsyncconfigdynamicwithrenewalpercent)
 
 ## Fields
 
@@ -537,3 +540,19 @@ withName(name)
 ```
 
 "Name of the resource"
+
+## obj spec.syncConfig
+
+"SyncConfig configures sync behavior from HVS to VSO"
+
+## obj spec.syncConfig.dynamic
+
+"Dynamic configures sync behavior for dynamic secrets."
+
+### fn spec.syncConfig.dynamic.withRenewalPercent
+
+```ts
+withRenewalPercent(renewalPercent)
+```
+
+"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\nnew secrets are generated. Defaults to 67 percent minus jitter."

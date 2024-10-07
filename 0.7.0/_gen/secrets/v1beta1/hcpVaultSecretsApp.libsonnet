@@ -118,6 +118,14 @@
       '#withName':: d.fn(help='"Name of the resource"', args=[d.arg(name='name', type=d.T.string)]),
       withName(name): { name: name },
     },
+    '#syncConfig':: d.obj(help='"SyncConfig configures sync behavior from HVS to VSO"'),
+    syncConfig: {
+      '#dynamic':: d.obj(help='"Dynamic configures sync behavior for dynamic secrets."'),
+      dynamic: {
+        '#withRenewalPercent':: d.fn(help="\"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\\nnew secrets are generated. Defaults to 67 percent minus jitter.\"", args=[d.arg(name='renewalPercent', type=d.T.integer)]),
+        withRenewalPercent(renewalPercent): { spec+: { syncConfig+: { dynamic+: { renewalPercent: renewalPercent } } } },
+      },
+    },
     '#withAppName':: d.fn(help='"AppName of the Vault Secrets Application that is to be synced."', args=[d.arg(name='appName', type=d.T.string)]),
     withAppName(appName): { spec+: { appName: appName } },
     '#withHcpAuthRef':: d.fn(help="\"HCPAuthRef to the HCPAuth resource, can be prefixed with a namespace, eg:\\n`namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default\\nto the namespace of the HCPAuth CR. If no value is specified for HCPAuthRef the\\nOperator will default to the `default` HCPAuth, configured in the operator's\\nnamespace.\"", args=[d.arg(name='hcpAuthRef', type=d.T.string)]),

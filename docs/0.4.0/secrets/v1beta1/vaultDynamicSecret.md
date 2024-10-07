@@ -276,7 +276,7 @@ withMount(mount)
 withNamespace(namespace)
 ```
 
-"Namespace where the secrets engine is mounted in Vault."
+"Namespace of the secrets engine mount in Vault. If not set, the namespace that's\npart of VaultAuth resource will be inferred."
 
 ### fn spec.withParams
 
@@ -360,7 +360,7 @@ withRolloutRestartTargetsMixin(rolloutRestartTargets)
 withVaultAuthRef(vaultAuthRef)
 ```
 
-"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nnamespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator will\ndefault to the `default` VaultAuth, configured in the operator's namespace."
+"VaultAuthRef to the VaultAuth resource, can be prefixed with a namespace,\neg: `namespaceA/vaultAuthRefB`. If no namespace prefix is provided it will default to\nthe namespace of the VaultAuth CR. If no value is specified for VaultAuthRef the Operator\nwill default to the `default` VaultAuth, configured in the operator's namespace."
 
 ## obj spec.destination
 
