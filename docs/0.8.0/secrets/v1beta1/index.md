@@ -1,5 +1,5 @@
 ---
-permalink: /0.6.0/secrets/v1beta1/
+permalink: /0.8.0/secrets/v1beta1/
 ---
 
 # secrets.v1beta1
