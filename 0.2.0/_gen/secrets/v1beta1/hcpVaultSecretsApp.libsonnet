@@ -122,7 +122,7 @@
     syncConfig: {
       '#dynamic':: d.obj(help='"Dynamic configures sync behavior for dynamic secrets."'),
       dynamic: {
-        '#withRenewalPercent':: d.fn(help="\"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\\nnew secrets are generated. Defaults to 67 percent minus jitter.\"", args=[d.arg(name='renewalPercent', type=d.T.integer)]),
+        '#withRenewalPercent':: d.fn(help="\"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\\nnew secrets are generated. Defaults to 67 percent plus up to 10% jitter.\"", args=[d.arg(name='renewalPercent', type=d.T.integer)]),
         withRenewalPercent(renewalPercent): { spec+: { syncConfig+: { dynamic+: { renewalPercent: renewalPercent } } } },
       },
     },

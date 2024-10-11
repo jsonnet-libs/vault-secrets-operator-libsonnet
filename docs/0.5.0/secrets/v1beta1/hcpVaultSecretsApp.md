@@ -555,4 +555,4 @@ withName(name)
 withRenewalPercent(renewalPercent)
 ```
 
-"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\nnew secrets are generated. Defaults to 67 percent minus jitter."
+"RenewalPercent is the percent out of 100 of a dynamic secret's TTL when\nnew secrets are generated. Defaults to 67 percent plus up to 10% jitter."
