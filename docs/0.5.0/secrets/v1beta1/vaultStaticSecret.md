@@ -299,7 +299,7 @@ withRefreshAfter(refreshAfter)
 withRolloutRestartTargets(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets will be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.withRolloutRestartTargetsMixin
 
@@ -307,7 +307,7 @@ withRolloutRestartTargets(rolloutRestartTargets)
 withRolloutRestartTargetsMixin(rolloutRestartTargets)
 ```
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets will be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 **Note:** This function appends passed data to existing values
 
@@ -567,7 +567,7 @@ withName(name)
 
 ## obj spec.rolloutRestartTargets
 
-"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets wil be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
+"RolloutRestartTargets should be configured whenever the application(s) consuming the Vault secret does\nnot support dynamically reloading a rotated secret.\nIn that case one, or more RolloutRestartTarget(s) can be configured here. The Operator will\ntrigger a \"rollout-restart\" for each target whenever the Vault secret changes between reconciliation events.\nAll configured targets will be ignored if HMACSecretData is set to false.\nSee RolloutRestartTarget for more details."
 
 ### fn spec.rolloutRestartTargets.withKind
 
