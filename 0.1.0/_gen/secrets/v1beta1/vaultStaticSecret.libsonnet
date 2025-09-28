@@ -129,7 +129,7 @@
     withMount(mount): { spec+: { mount: mount } },
     '#withNamespace':: d.fn(help="\"Namespace of the secrets engine mount in Vault. If not set, the namespace that's\\npart of VaultAuth resource will be inferred.\"", args=[d.arg(name='namespace', type=d.T.string)]),
     withNamespace(namespace): { spec+: { namespace: namespace } },
-    '#withPath':: d.fn(help='"Path of the secret in Vault, corresponds to the `path` parameter for,\\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"', args=[d.arg(name='path', type=d.T.string)]),
+    '#withPath':: d.fn(help='"Path of the secret in Vault, corresponds to the `path` parameter for:\\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"', args=[d.arg(name='path', type=d.T.string)]),
     withPath(path): { spec+: { path: path } },
     '#withRefreshAfter':: d.fn(help='"RefreshAfter a period of time, in duration notation e.g. 30s, 1m, 24h"', args=[d.arg(name='refreshAfter', type=d.T.string)]),
     withRefreshAfter(refreshAfter): { spec+: { refreshAfter: refreshAfter } },

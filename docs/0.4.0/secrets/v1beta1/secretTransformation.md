@@ -226,7 +226,7 @@ withUid(uid)
 withExcludes(excludes)
 ```
 
-"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
+"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
 
 ### fn spec.withExcludesMixin
 
@@ -234,7 +234,7 @@ withExcludes(excludes)
 withExcludesMixin(excludes)
 ```
 
-"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
+"Excludes contains regex patterns used to filter top-level source secret data\nfields for exclusion from the final secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied before any inclusion patterns. To exclude all source secret data\nfields, you can configure the single pattern \".*\"."
 
 **Note:** This function appends passed data to existing values
 
@@ -244,7 +244,7 @@ withExcludesMixin(excludes)
 withIncludes(includes)
 ```
 
-"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
+"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
 
 ### fn spec.withIncludesMixin
 
@@ -252,7 +252,7 @@ withIncludes(includes)
 withIncludesMixin(includes)
 ```
 
-"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final K8s Secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
+"Includes contains regex patterns used to filter top-level source secret data\nfields for inclusion in the final secret data. These pattern filters are\nnever applied to templated fields as defined in Templates. They are always\napplied last."
 
 **Note:** This function appends passed data to existing values
 
@@ -262,7 +262,7 @@ withIncludesMixin(includes)
 withSourceTemplates(sourceTemplates)
 ```
 
-"SourceTemplates are never included in the rendered K8s Secret, they can be\nused to provide common template definitions, etc."
+"SourceTemplates are never included in the rendered secret, they can be\nused to provide common template definitions, etc."
 
 ### fn spec.withSourceTemplatesMixin
 
@@ -270,7 +270,7 @@ withSourceTemplates(sourceTemplates)
 withSourceTemplatesMixin(sourceTemplates)
 ```
 
-"SourceTemplates are never included in the rendered K8s Secret, they can be\nused to provide common template definitions, etc."
+"SourceTemplates are never included in the rendered secret, they can be\nused to provide common template definitions, etc."
 
 **Note:** This function appends passed data to existing values
 
@@ -280,7 +280,7 @@ withSourceTemplatesMixin(sourceTemplates)
 withTemplates(templates)
 ```
 
-"Templates maps a template name to its Template. Templates are always included\nin the rendered K8s Secret with the specified key."
+"Templates maps a template name to its Template. Templates are always included\nin the rendered secret with the specified key."
 
 ### fn spec.withTemplatesMixin
 
@@ -288,13 +288,13 @@ withTemplates(templates)
 withTemplatesMixin(templates)
 ```
 
-"Templates maps a template name to its Template. Templates are always included\nin the rendered K8s Secret with the specified key."
+"Templates maps a template name to its Template. Templates are always included\nin the rendered secret with the specified key."
 
 **Note:** This function appends passed data to existing values
 
 ## obj spec.sourceTemplates
 
-"SourceTemplates are never included in the rendered K8s Secret, they can be\nused to provide common template definitions, etc."
+"SourceTemplates are never included in the rendered secret, they can be\nused to provide common template definitions, etc."
 
 ### fn spec.sourceTemplates.withName
 

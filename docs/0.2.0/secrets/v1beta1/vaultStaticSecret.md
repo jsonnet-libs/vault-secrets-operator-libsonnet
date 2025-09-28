@@ -283,7 +283,7 @@ withNamespace(namespace)
 withPath(path)
 ```
 
-"Path of the secret in Vault, corresponds to the `path` parameter for,\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
+"Path of the secret in Vault, corresponds to the `path` parameter for:\nkv-v1: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v1#read-secret\nkv-v2: https://developer.hashicorp.com/vault/api-docs/secret/kv/kv-v2#read-secret-version"
 
 ### fn spec.withRefreshAfter
 

@@ -266,7 +266,7 @@ withUid(uid)
 withAllowedNamespaces(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nYou only need to set allowedNamespaces when you want to control access from a resource in\na different namespace than the VaultAuth it references. Secret resources in\nthe same namespace as the VaultAuth bypass this check.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
 
 ### fn spec.withAllowedNamespacesMixin
 
@@ -274,7 +274,7 @@ withAllowedNamespaces(allowedNamespaces)
 withAllowedNamespacesMixin(allowedNamespaces)
 ```
 
-"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
+"AllowedNamespaces Kubernetes Namespaces which are allow-listed for use with this AuthMethod.\nThis field allows administrators to customize which Kubernetes namespaces are authorized to\nuse with this AuthMethod. While Vault will still enforce its own rules, this has the added\nconfigurability of restricting which VaultAuthMethods can be used by which namespaces.\nYou only need to set allowedNamespaces when you want to control access from a resource in\na different namespace than the VaultAuth it references. Secret resources in\nthe same namespace as the VaultAuth bypass this check.\nAccepted values:\n[]{\"*\"} - wildcard, all namespaces.\n[]{\"a\", \"b\"} - list of namespaces.\nunset - disallow all namespaces except the Operator's the VaultAuthMethod's namespace, this\nis the default behavior."
 
 **Note:** This function appends passed data to existing values
 
