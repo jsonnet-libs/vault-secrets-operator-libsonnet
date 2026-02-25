@@ -42,6 +42,7 @@ permalink: /0.7.0/secrets/v1beta1/vaultAuth/
   * [`fn withVaultConnectionRef(vaultConnectionRef)`](#fn-specwithvaultconnectionref)
   * [`obj spec.appRole`](#obj-specapprole)
     * [`fn withRoleId(roleId)`](#fn-specapprolewithroleid)
+    * [`fn withSecretIDPath(secretIDPath)`](#fn-specapprolewithsecretidpath)
     * [`fn withSecretRef(secretRef)`](#fn-specapprolewithsecretref)
   * [`obj spec.aws`](#obj-specaws)
     * [`fn withHeaderValue(headerValue)`](#fn-specawswithheadervalue)
@@ -358,13 +359,21 @@ withRoleId(roleId)
 
 "RoleID of the AppRole Role to use for authenticating to Vault."
 
+### fn spec.appRole.withSecretIDPath
+
+```ts
+withSecretIDPath(secretIDPath)
+```
+
+"SecretIDPath is a file system path pointing to a file containing the plaintext Secret ID for the\nAppRole Role to use for authenticating to Vault.\nSecretIDPath and SecretRef are mutually exclusive, and only one should be specified."
+
 ### fn spec.appRole.withSecretRef
 
 ```ts
 withSecretRef(secretRef)
 ```
 
-"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which\nprovides the AppRole Role's SecretID. The secret must have a key named `id` which holds the\nAppRole Role's secretID."
+"SecretRef is the name of a Kubernetes secret in the consumer's (VDS/VSS/PKI) namespace which\nprovides the AppRole Role's SecretID. The secret must have a key named `id` which holds the\nAppRole Role's secretID.\nSecretIDPath and SecretRef are mutually exclusive, and only one should be specified."
 
 ## obj spec.aws
 

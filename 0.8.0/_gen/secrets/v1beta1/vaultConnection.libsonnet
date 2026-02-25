@@ -51,7 +51,9 @@
   spec: {
     '#withAddress':: d.fn(help='"Address of the Vault server"', args=[d.arg(name='address', type=d.T.string)]),
     withAddress(address): { spec+: { address: address } },
-    '#withCaCertSecretRef':: d.fn(help='"CACertSecretRef is the name of a Kubernetes secret containing the trusted PEM encoded CA certificate chain as `ca.crt`."', args=[d.arg(name='caCertSecretRef', type=d.T.string)]),
+    '#withCaCertPath':: d.fn(help='"CACertPath is the path to a trusted PEM-encoded CA certificate file on the filesystem that can be used to validate\\nthe certificate presented by the Vault server.\\nCACertPath and CACertSecretRef are mutually exclusive, and only one should be specified."', args=[d.arg(name='caCertPath', type=d.T.string)]),
+    withCaCertPath(caCertPath): { spec+: { caCertPath: caCertPath } },
+    '#withCaCertSecretRef':: d.fn(help='"CACertSecretRef is the name of a Kubernetes secret containing the trusted PEM encoded CA certificate chain as `ca.crt`.\\nCACertPath and CACertSecretRef are mutually exclusive, and only one should be specified."', args=[d.arg(name='caCertSecretRef', type=d.T.string)]),
     withCaCertSecretRef(caCertSecretRef): { spec+: { caCertSecretRef: caCertSecretRef } },
     '#withHeaders':: d.fn(help='"Headers to be included in all Vault requests."', args=[d.arg(name='headers', type=d.T.object)]),
     withHeaders(headers): { spec+: { headers: headers } },

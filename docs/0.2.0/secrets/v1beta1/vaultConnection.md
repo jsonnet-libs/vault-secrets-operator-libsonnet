@@ -31,6 +31,7 @@ permalink: /0.2.0/secrets/v1beta1/vaultConnection/
   * [`fn withUid(uid)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
   * [`fn withAddress(address)`](#fn-specwithaddress)
+  * [`fn withCaCertPath(caCertPath)`](#fn-specwithcacertpath)
   * [`fn withCaCertSecretRef(caCertSecretRef)`](#fn-specwithcacertsecretref)
   * [`fn withHeaders(headers)`](#fn-specwithheaders)
   * [`fn withHeadersMixin(headers)`](#fn-specwithheadersmixin)
@@ -224,13 +225,21 @@ withAddress(address)
 
 "Address of the Vault server"
 
+### fn spec.withCaCertPath
+
+```ts
+withCaCertPath(caCertPath)
+```
+
+"CACertPath is the path to a trusted PEM-encoded CA certificate file on the filesystem that can be used to validate\nthe certificate presented by the Vault server.\nCACertPath and CACertSecretRef are mutually exclusive, and only one should be specified."
+
 ### fn spec.withCaCertSecretRef
 
 ```ts
 withCaCertSecretRef(caCertSecretRef)
 ```
 
-"CACertSecretRef is the name of a Kubernetes secret containing the trusted PEM encoded CA certificate chain as `ca.crt`."
+"CACertSecretRef is the name of a Kubernetes secret containing the trusted PEM encoded CA certificate chain as `ca.crt`.\nCACertPath and CACertSecretRef are mutually exclusive, and only one should be specified."
 
 ### fn spec.withHeaders
 
